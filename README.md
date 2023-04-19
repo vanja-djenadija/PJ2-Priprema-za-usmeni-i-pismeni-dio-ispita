@@ -98,7 +98,7 @@ Akcenat je na konkurentnom programiranju i pravilnoj sinhronizaciji. Bitno je na
 3. Analiza rješenja ispitnih zadataka (paketi, klase, komentari)
 </details>
 
-##### 
+###
 
 <details>
   <summary>06.10.2021</summary>
@@ -140,7 +140,7 @@ Akcenat je na konkurentnom programiranju i pravilnoj sinhronizaciji. Bitno je na
 3. Pretraga direktorijuma Rad sa fajlovima + Stream API
 </details>
 
-##### 
+###
 
 <details>
   <summary>13.02.2020 **</summary>
@@ -158,7 +158,7 @@ Akcenat je na konkurentnom programiranju i pravilnoj sinhronizaciji. Bitno je na
 3. Stream API | Zec
 </details>
 
-##### 
+###
 
 <details>
   <summary>06.09.2018</summary>
