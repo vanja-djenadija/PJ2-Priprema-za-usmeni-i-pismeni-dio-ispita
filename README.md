@@ -161,6 +161,64 @@ Akcenat je na konkurentnom programiranju i pravilnoj sinhronizaciji. Bitno je na
 ---
 
 <details>
+  <summary>19.09.2019.</summary>
+
+1. JavaAds + JavaCity
+2. Rad sa fajlovima + komandna linija (-src, -dest, -unique, -limit)
+3. StekRed **08.09.2021.**
+</details>
+
+<details>
+  <summary>05.09.2019.</summary>
+
+1. JavaFabrika
+2. Generici Baza artikala prodavnice + CSV
+3. JavaBank Stream API + Simulacija
+</details>
+
+<details>
+  <summary>04.07.2019. **</summary>
+
+1. Java vodeni svijet
+2. Java kompanija pozivnice Rad sa fajlovima
+3. Generici Predicate hashCode **25.08.2021.**
+</details>
+
+<details>
+  <summary>18.04.2019.</summary>
+
+1. Java takmičenje prepreke, bonusi, voda, vatra, stijena
+2. FileWatcher binarne datoteke Rad sa fajlovima
+3. Takmičenje niti Xnit, Ynit, Znit
+</details>
+
+<details>
+  <summary>14.02.2019.</summary>
+
+1. Narudžbenica i Faktura
+2. Generici, Stream API, Predicate
+3. Rad sa fajlovima ispis brojeva (10)
+</details>
+
+---
+
+<details>
+  <summary>05.10.2018</summary>
+
+1. Simulacija Kino dvorane
+2. ConsoleTable ***
+3. Rad sa fajlovima
+</details>
+
+<details>
+  <summary>20.09.2018</summary>
+
+1. Java firma varioci, vozači, bravari
+2. Queue AddThread, RemoveThread
+3. Minsko polje simulacija
+</details>
+
+<details>
   <summary>06.09.2018</summary>
 
 1. Sipanje goriva na benzinskoj pumpi
@@ -168,4 +226,118 @@ Akcenat je na konkurentnom programiranju i pravilnoj sinhronizaciji. Bitno je na
 3. Java NIO + Stream API
 </details>
 
+<details>
+  <summary>19.04.2018</summary>
 
+1. Simulacija voda, vatra, stijena
+2. Obrada sadržaja tekstualnih fajlova na različite načine (loader, processor, exporter) **
+3. Stream API
+</details>
+
+<details>
+  <summary>15.02.2018</summary>
+
+1. Simulacija sakupljanje zlatnika robot, planinar, atletičar, skijaš
+2. Modifikacija konfiguracioni fajl
+3. Generička metoda **
+</details>
+
+<details>
+  <summary>01.02.2018</summary>
+
+1. Java hidrocentrala
+2. [Ponovljeno] broj klasa, paketa **26.01.2022**
+3. FileWatcher
+</details>
+
+---
+
+<details>
+  <summary>27.09.2017</summary>
+
+1. Fabrika, trake, mašine
+2. Proširenje prethodnog zadatka, Narudžbe, algoritam za raspoređivanje 
+3. Stream API
+</details>
+
+<details>
+  <summary>07.09.2017</summary>
+
+1. Upravljanje fajlova u folderima
+2. Proširenje
+3. Proširenje
+</details>
+
+<details>
+  <summary>24.08.2017 **</summary>
+
+1. **08.09.2021.**
+2. Processor
+3. Exporter
+</details>
+
+<details>
+  <summary>29.06.2017</summary>
+
+1. Takmičenje na mapi prepeke + bonusi
+2. CSV analiza poslovanja izmišljenog preduzeća
+3. Generator Java klasa
+</details>
+
+<details>
+  <summary>27.04.2017</summary>
+
+1. Turističke atrakcije
+2. Stack PusherThread PopperThread
+3. Stream API Quotes CSV
+</details>
+
+<details>
+  <summary>09.02.2017**</summary>
+
+1. Grad robovil Roboti
+2. Procesiranje **
+3. Class-creator
+</details>
+
+---
+
+<details>
+  <summary>22.10.2016</summary>
+
+1. Mitološka bića
+2. Ppogađanje riječi
+3. Fajlovi sa riječima istog početnog slova
+</details>
+
+<details>
+  <summary>22.09.2016 **</summary>
+
+1. Takmičenje prepreke i bonusi
+2. Kopiranje fajlova, foldera
+3. XML, JSON -> Java klase 
+</details>
+
+<details>
+  <summary>08.09.2016 **</summary>
+
+1. Muzički zapisi
+2. HTML Parser **
+3. Rad sa fajlovima
+</details>
+
+<details>
+  <summary>30.06.2016 **</summary>
+
+1. Ambulanta
+2. LIMUNADA Pogađanje riječi
+3. Rad sa fajlovima razvrstavanje
+</details>
+
+<details>
+  <summary>16.06.2016 ***</summary>
+
+1. Evropsko prvenstvo u fudbalu
+2. Proširenje
+3. Fajlovi
+</details>
