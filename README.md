@@ -74,7 +74,7 @@ Akcenat je na konkurentnom programiranju i pravilnoj sinhronizaciji. Bitno je na
 </details>
 
 <details>
-  <summary>15.06.2022</summary>
+  <summary>15.06.2022 ✅</summary>
 
 1. Orwell 1984 Big brother
 2. Rad sa fajlovima
@@ -83,7 +83,7 @@ Akcenat je na konkurentnom programiranju i pravilnoj sinhronizaciji. Bitno je na
 
 
 <details>
-  <summary>09.02.2022</summary>
+  <summary>09.02.2022 ✅</summary>
 
 1. Trka vozila
 2. Stream API + Rad sa fajlovima Filmovi
@@ -91,7 +91,7 @@ Akcenat je na konkurentnom programiranju i pravilnoj sinhronizaciji. Bitno je na
 </details>
 
 <details>
-  <summary>26.01.2022 **</summary>
+  <summary>26.01.2022 ** ➡️</summary>
 
 1. Slanje poruka + FileWatcher
 2. Simulacija rad sa fajlovima
@@ -101,7 +101,7 @@ Akcenat je na konkurentnom programiranju i pravilnoj sinhronizaciji. Bitno je na
 ---
 
 <details>
-  <summary>06.10.2021</summary>
+  <summary>06.10.2021 ➡️</summary>
 
 1. Studentski izbori (.SAVE, .ELECTION, .REGISTER, .STATUS)
 2. Rad sa fajlovima
@@ -109,7 +109,7 @@ Akcenat je na konkurentnom programiranju i pravilnoj sinhronizaciji. Bitno je na
 </details>
 
 <details>
-  <summary>08.09.2021</summary>
+  <summary>08.09.2021 ✅</summary>
 
 1. Obrada podataka kompanije (IMPORT, AUTO, SAVE, STATUS)
 2. Stream API Studenti
@@ -125,7 +125,7 @@ Akcenat je na konkurentnom programiranju i pravilnoj sinhronizaciji. Bitno je na
 </details>
 
 <details>
-  <summary>30.07.2021</summary>
+  <summary>30.07.2021 ✅</summary>
 
 1. Simulacija kupovine na kasi
 2. Generici (Skladište, Podaci, Obavještenje , Alarmi)
@@ -133,7 +133,7 @@ Akcenat je na konkurentnom programiranju i pravilnoj sinhronizaciji. Bitno je na
 </details>
 
 <details>
-  <summary>16.06.2021</summary>
+  <summary>16.06.2021 ✅</summary>
 
 1. Vojna plovila
 2. Stream API Knjige
@@ -151,7 +151,7 @@ Akcenat je na konkurentnom programiranju i pravilnoj sinhronizaciji. Bitno je na
 </details>
 
 <details>
-  <summary>30.01.2020</summary>
+  <summary>30.01.2020 ➡️</summary>
 
 1. Trka vozila
 2. Sakupljac_Watcher + rad sa fajlovima
@@ -159,6 +159,12 @@ Akcenat je na konkurentnom programiranju i pravilnoj sinhronizaciji. Bitno je na
 </details>
 
 ---
+
+<details>
+  <summary>03.10.2019 ✅</summary>
+
+
+</details>
 
 <details>
   <summary>19.09.2019.</summary>
@@ -219,7 +225,7 @@ Akcenat je na konkurentnom programiranju i pravilnoj sinhronizaciji. Bitno je na
 </details>
 
 <details>
-  <summary>06.09.2018</summary>
+  <summary>06.09.2018 ✅</summary>
 
 1. Sipanje goriva na benzinskoj pumpi
 2. Rad sa fajl sistemom
