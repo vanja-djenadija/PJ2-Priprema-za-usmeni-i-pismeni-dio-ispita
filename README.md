@@ -1,6 +1,6 @@
 # Programski jezici 2 - Pismeni dio ispita
 
-## Oblasti
+## :pushpin: Oblasti
 
 1. Uvod
 
@@ -24,7 +24,7 @@
 
 11. GUI
 
-## Tipovi zadataka na pismenom dijelu ispita
+## :pushpin: Tipovi zadataka na pismenom dijelu ispita
 
 <details>
   <summary>Prvi zadatak</summary>
@@ -51,11 +51,11 @@ Akcenat je na konkurentnom programiranju i pravilnoj sinhronizaciji. Bitno je na
 - Stream API
 - </details>
 
-## Usmeni ispit
+## :rotating_light: Usmeni ispit
 
 [:arrow_forward: Usmeni ispit](resources/Usmeni.md)
 
-## Tips and tricks
+## :sun_with_face: Tips and tricks
 
 ```
     import java.util.*;
@@ -65,10 +65,10 @@ Akcenat je na konkurentnom programiranju i pravilnoj sinhronizaciji. Bitno je na
 - `public` identifikator pristupa svih atributa, bez getter i setter metoda
 - `catch(Exception e)`
 
-## Praktični ispiti
+## :page_facing_up: Praktični ispiti
 
 <details>
-  <summary>29.06.2022</summary>
+<summary>29.06.2022</summary>
 
 1. Simulacija leta
 2. Stream API Registar proizvoda
