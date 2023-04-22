@@ -104,9 +104,9 @@ Akcenat je na konkurentnom programiranju i pravilnoj sinhronizaciji. Bitno je na
   ```
 - Deserijalizacija
   ```java
-       try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fajlIn))) {
+       String fajl = "fajl.ser";
+       try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fajl))) {
               proizvodi = (ArrayList<Proizvod>) ois.readObject();
-              //proizvodi.forEach(System.out::println);
           } catch (ClassNotFoundException | IOException e) {
               e.printStackTrace();
           }
@@ -114,7 +114,10 @@ Akcenat je na konkurentnom programiranju i pravilnoj sinhronizaciji. Bitno je na
 - ```java
   File[] file.listFiles()
   ```
--
+- ```java
+    import java.util.concurrent.*;
+    BlockingQueue<Student> red = new LinkedBlockingQueue<>();
+    ```
 
 ## :page_facing_up: Praktični ispiti
 

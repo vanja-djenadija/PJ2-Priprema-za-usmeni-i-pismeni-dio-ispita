@@ -1,25 +1,23 @@
 package R_2022_06_29.Z03;
 
-public class RemoveThread extends Thread{
-	Long postotak;
+public class RemoveThread extends Thread {
+    Long postotak;
 
-	public RemoveThread(long l){
-		start();
-		this.postotak = postotak;
-	}
+    public RemoveThread(long postotak) {
+        this.postotak = postotak;
+        start();
+    }
 
-	public void run(){
-		while(!Simulacija.END){
-			try{
-				Thread.sleep(500*postotak);
-			}catch(InterruptedException e){
-				e.printStackTrace();
-			}
-			try{
-				Student s = Simulacija.red.studenti.element();}
-			catch(Exception e){
-
-			}
-		}
-	}
+    @Override
+    public void run() {
+        try {
+            while (!Simulacija.END) {
+                Thread.sleep(500 * postotak);
+                Student student = Simulacija.red.studenti.take();
+                System.out.println("Uklonjen je: " + student);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

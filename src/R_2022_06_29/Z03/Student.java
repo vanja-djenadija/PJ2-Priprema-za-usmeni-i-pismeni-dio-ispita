@@ -14,10 +14,10 @@ public class Student{
 		ime = "Ime" + count++;
 		prezime = "Prezime" + count;
 		indeks = "indeks" + count;
-		ocjena = (double) new Random().nextInt(4) + 6;
+		ocjena = (double) new Random().nextInt(5) + 6;
 	}
 
 	public String toString(){
-		return ime + " " + " " + prezime + " " + indeks;
+		return ime + " " + prezime + " " + indeks;
 	}
 }

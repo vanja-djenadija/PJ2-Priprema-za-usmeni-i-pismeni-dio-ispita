@@ -5,23 +5,22 @@ public class AddThread extends Thread {
     Long postotak;
 
     public AddThread(Long postotak) {
-        start();
         this.postotak = postotak;
+        start();
     }
 
+    @Override
     public void run() {
-        while (!Simulacija.END) {
-            try {
-                Thread.sleep(500);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+        try {
+            while (!Simulacija.END) {
+                // Pauza od pola sekunde
+                Thread.sleep(500 * postotak);
+                Student student = new Student();
+                Simulacija.red.studenti.put(student);
+                System.out.println("Dodan je: " + student);
             }
-			try {
-				Simulacija.red.studenti.put(new Student());
-			} catch (InterruptedException e) {
-				throw new RuntimeException(e);
-			}
-		}
-
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
