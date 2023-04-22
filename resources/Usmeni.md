@@ -148,31 +148,31 @@ class C extends A {...}
 
 7. **Serijalizacija →** uglavnom se izvršava, dosta caka
 
-- **Serializable** je markerski interfejs, ne mora se ništa implementirati
+   - **Serializable** je markerski interfejs, ne mora se ništa implementirati
   može
       ```java
       private void writeObject(java.io.ObjectOutputStream out) throws IOException
       private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException;
       ```
-- **`Externalizable` mora** implementirati sljedeće metode
-  ```java
-  public void writeExternal(ObjectOutput out) throws IOException
-  public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException
-  ```
-- **`Externalizable` nadjačava `Serializable`**
-- SVAKA klasa koja implementira **`Externalizable` MORA IMATI DEFAULT CTOR, jer se on prvo poziva u procesu deserijalizacije, inače `InvalidClassException`**
-- **Roditelj**, **Dijete** implementira **`Serializable`, Roditelj MORA imati default ctor → inače Runtime Exception, atributi roditelja** dobijaju default vrijednosti, a ne stvarne, u suprotnom Roditelj ne mora imati default ctor (jer se on ni ne poziva u tom slučaju)
+   - **`Externalizable` mora** implementirati sljedeće metode
+        ```java
+        public void writeExternal(ObjectOutput out) throws IOException
+        public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException
+        ```
+   - **`Externalizable` nadjačava `Serializable`**
+   - SVAKA klasa koja implementira **`Externalizable` MORA IMATI DEFAULT CTOR, jer se on prvo poziva u procesu deserijalizacije, inače `InvalidClassException`**
+   - **Roditelj**, **Dijete** implementira **`Serializable`, Roditelj MORA imati default ctor → inače Runtime Exception, atributi roditelja** dobijaju default vrijednosti, a ne stvarne, u suprotnom Roditelj ne mora imati default ctor (jer se on ni ne poziva u tom slučaju)
   ![Serialization image](ser.png)
-- Redoslijed deserializacije je bitan
-- S: Int + Long = 4 + 8 = 12
+   - Redoslijed deserializacije je bitan
+   - S: Int + Long = 4 + 8 = 12
   D: Long + Int = 8 + 4 = 12
   **OK ⇒ jer je veličina dovoljna
   NOT OK → veličine ne odgovaraju → Exception**
-- **implements** **`Serializable`,** a ima **writeExternal i readExternal** metode **→** tretiraju se kao **obične metode**
-- writeObject i readObject mogu pozivati writeExternal, readExternal
-- ako postoji hijerarhija, ide **super.readObject** pa tek onda readObject
-- **static** i **transient** promjenljive se neće serijalizovati implicitno
-- `NotSerializableException` → svi složeni atributi neke klase takođe treba da implementiraju **`Serializable`**
+   - **implements** **`Serializable`,** a ima **writeExternal i readExternal** metode **→** tretiraju se kao **obične metode**
+   - writeObject i readObject mogu pozivati writeExternal, readExternal
+   - ako postoji hijerarhija, ide **super.readObject** pa tek onda readObject
+   - **static** i **transient** promjenljive se neće serijalizovati implicitno
+   - `NotSerializableException` → svi složeni atributi neke klase takođe treba da implementiraju **`Serializable`**
 
 ### Drugi dio
 
