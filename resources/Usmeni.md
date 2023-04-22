@@ -1,11 +1,11 @@
-## Usmeni ispit
+## :rotating_light: Usmeni ispit
 
 1. **I DIO** - 35 bodova (7 x 5b) Veći zadaci (compile error ili ispis)
 2. **II DIO** - 9/6b Memorija (crtanje, ispis, Exceptions)
 3. **III DIO** - 6/9b Mali zadaci (compile error ili ispis)
    **Ukupno 50 bodova**
 
-### Prvi dio
+### :one: Prvi dio
 
 #### Ostalo
 
@@ -174,7 +174,7 @@ class C extends A {...}
    - **static** i **transient** promjenljive se neće serijalizovati implicitno
    - `NotSerializableException` → svi složeni atributi neke klase takođe treba da implementiraju **`Serializable`**
 
-### Drugi dio
+### :two: Drugi dio
 
 - izračunati veličinu svih objekata na početku
 - **CHAR JE 2B**
@@ -183,7 +183,7 @@ class C extends A {...}
 - **finalize** metoda se poziva prilikom svakog poziva **System.gc()**
 - **finalize** se poziva bez eksplicitnog poziva gc zbog uslova zadatka za oslobađanje memorije
 
-### Treći dio
+### :three: Treći dio
 
 - try-with-resources u kom je Exception → pa se poziva close() metoda
 - `Enum`, poziv metode `ordinal()` počinje od 0
