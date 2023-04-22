@@ -1,17 +1,20 @@
 package R_2021_06_16.Z03;
 
-import java.io.*;
-import java.util.*;
-import java.nio.file.*;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+import java.util.ArrayList;
 
 public class Main {
     public ArrayList<String> putanje = new ArrayList<>();
     public String ekstenzija;
 
     public void obidji(File putanja) {
-        if (putanja.isFile()) {
-            if (putanja.getPath().endsWith(ekstenzija))
-                putanje.add(putanja.getPath());
+        if (putanja.isFile() && putanja.getPath().endsWith(ekstenzija)) {
+            putanje.add(putanja.getPath());
         } else if (putanja.isDirectory()) {
             File[] files = putanja.listFiles();
             for (File f : files) {

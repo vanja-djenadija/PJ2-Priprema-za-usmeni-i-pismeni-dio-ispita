@@ -117,12 +117,151 @@ Akcenat je na konkurentnom programiranju i pravilnoj sinhronizaciji. Bitno je na
 - ```java
     import java.util.concurrent.*;
     BlockingQueue<Student> red = new LinkedBlockingQueue<>();
-    ```
+  ```
+- soriranje
+  ```java
+    kolekcija.stream().sorted(Comparator.comparingInt(Object::hashCode))
+  ```
+- **File Watcher**
+
+  ```java
+    WatchService service = FileSystems.getDefault().newWatchService();
+    Path dir = Paths.get(args[0]);
+    dir.register(service, ENTRY_CREATE);
+    while (true) {
+        WatchKey key = null;
+        try {
+            key = service.take();
+        } catch (InterruptedException e) {
+            System.out.println(e.getMessage());
+        }
+        for (WatchEvent<?> event : key.pollEvents()) {
+            WatchEvent.Kind<?> kind = event.kind();
+            WatchEvent<Path> ev = (WatchEvent<Path>) event;
+            Path filename = ev.context();
+            if (kind.equals(ENTRY_CREATE)) {
+                System.out.println("Kreiran novi fajl : " + filename);
+                glavnaMetoda(args[0], filename.toString());
+            }
+        }
+
+        boolean valid = key.reset();
+        if (!valid)
+            break;
+    }
+  ```
+
+- čitanje fajla
+  ```java
+  try {
+       List<String> linije = Files.readAllLines(Path.of(nazivFajla));
+  } catch (IOException e) {
+          e.printStackTrace();
+  }
+  ```
+- pisanje u fajl
+  ```java
+  try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(FILE)))) {
+        pw.println("Tekst");
+    } catch (IOException e) {
+        System.out.println(e.getMessage());
+    }
+  ```
+- Konverzija Array u List
+  ```java
+  new ArrayList<>(Arrays.asList(array))
+  ```
+- Rekurzivni obilazak foldera
+  ```java
+  public static void obidji(File file) {
+        if (file.isFile() && file.getPath().endsWith(ekstenzija)) {
+            prebrojRijeci(file);
+        } else if (file.isDirectory()) {
+            File[] fajlovi = file.listFiles();
+            for (File f : fajlovi) {
+                if (f.isDirectory())
+                    obidji(f);
+                else if (f.isFile() && f.getPath().endsWith(ekstenzija))
+                    prebrojRijeci(f);
+            }
+        }
+    }
+  ```
+- Čitanje iz fajla
+  ```java
+  try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+          String linija = null;
+          while ((linija = br.readLine()) != null) {
+              // (linija.toUpperCase().contains(rijec))
+                 // broj++;
+          }
+          // putanje.put(file.getPath(), broj);
+      } catch (IOException e) {
+          e.printStackTrace();
+      }
+  ```
+- mapiranje u kolekciju Intova, Double i vršenje nekih operacija nad njima average, sum itd.
+  ```java
+  mapToInt(e -> e.value)
+  mapToDouble(e -> e.value)
+  ```
+- reduce
+  ```java
+    System.out.println("Prikaz svih razlicitih godina rodenja u formatu godina1#godina2#...koristenjem reduce metode");
+    String rez = studenti.stream().mapToInt(s -> s.godinaRodj).distinct().sorted().mapToObj(String::valueOf).reduce("", (s1, s2) -> s1 + "#" + s2);
+    System.out.println(rez);
+  ```
+- Comparable
+
+  ```java
+  implements Comparable<Podatak>
+
+  public int compareTo(Podatak p){
+    return Integer.compare(hashCode(), p.hashCode());
+  }
+  ```
+
+- Pravljenje novog direktorijuma
+  ```java
+  Path destDir = Paths.get(args[1]);
+  destDir.toFile().mkdir(); // napravi direktorijum ako ne postoji
+  ```
+- Kopiranje jednog fajla u drugi
+  ```java
+  try{
+    Path source = Paths.get(f);
+    // kopiranje jednog fajla u drugi
+    Files.copy(source, Path.of(destDir.toString(), source.getFileName().toString()), StandardCopyOption.REPLACE_EXISTING);
+  } catch(Exception e){
+    e.printStackTrace();
+  }
+  ```
+- **Kod HASH KOLEKCIJA je bitno uraditi redefinisanje toString i hashCode metoda!**
+- equals metoda
+  ```java
+  @Override
+  public boolean equals(Object o) {
+      if (this == o) return true;
+      if (o == null || getClass() != o.getClass()) return false;
+     Knjiga knjiga = (Knjiga) o;
+      return this.naslov.equals(knjiga.naslov) && (this.godinaIzdavanja == knjiga.godinaIzdavanja);
+  }
+  ```
+  - hashCode metoda
+  ```java
+  @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 7 * hash + naslov.hashCode();
+        hash = 7 * hash + Integer.hashCode(godinaIzdavanja);
+        return hash;
+    }
+  ```
 
 ## :page_facing_up: Praktični ispiti
 
 <details>
-<summary>29.06.2022</summary>
+<summary>29.06.2022 ✅</summary>
 
 1. Simulacija leta
 2. Stream API Registar proizvoda

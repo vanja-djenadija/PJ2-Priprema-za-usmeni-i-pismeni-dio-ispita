@@ -22,7 +22,7 @@ public class Main {
                 .sorted((e1, e2) -> e2.getValue().size() - e1.getValue().size()).limit(1)
                 .forEach(e -> System.out.println(e.getKey() + " broj_oglasa " + e.getValue().size()));
 
-        System.out.println("Prikaz svih oglasa grupisanih po datumu");
+        System.out.println("Prikaz svih oglasa grupisanih po mjesecu");
         oglasi.stream().collect(Collectors.groupingBy(o -> o.datum.split("-")[1])).forEach((mjesec, oglasi) -> System.out.println(mjesec + " " + oglasi));
 
         System.out.println("\nPrikaz svih oglasa sortiranih po vremenu trajanja opadajuce");

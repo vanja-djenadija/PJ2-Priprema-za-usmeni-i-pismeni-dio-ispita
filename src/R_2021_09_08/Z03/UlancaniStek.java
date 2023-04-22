@@ -1,6 +1,6 @@
 package R_2021_09_08.Z03;
 
-// Node
+// IMPORTANT Klasa UlancaniStek je zapravo jedan čvor/Node
 public class UlancaniStek<T> {
 
     public T vrijednost;

@@ -43,7 +43,7 @@ public class Main {
 
     public static void main(String[] args) {
         if (args.length < 3) {
-            System.out.println("neodstaju argumenti komandne linije");
+            System.out.println("nedostaju argumenti komandne linije");
             return;
         }
 

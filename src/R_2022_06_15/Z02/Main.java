@@ -43,9 +43,8 @@ public class Main {
                     WatchEvent.Kind<?> kind = event.kind();
                     WatchEvent<Path> ev = (WatchEvent<Path>) event;
                     Path filename = ev.context();
-                    if (kind.equals(ENTRY_CREATE)){
-                        System.out.println(filename);
-                        System.out.println("Kreiran novi fajl");
+                    if (kind.equals(ENTRY_CREATE)) {
+                        System.out.println("Kreiran novi fajl : " + filename);
                         glavnaMetoda(args[0], filename.toString());
                     }
                 }
@@ -170,8 +169,8 @@ public class Main {
     }
 
     private static void serialize(String path, Student s) {
-        try (FileOutputStream fileOut = new FileOutputStream(path + File.separator + s.brojIndeksa + ".ser");
-             ObjectOutputStream out = new ObjectOutputStream(fileOut)) {
+        try (
+                ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(path + File.separator + s.brojIndeksa + ".ser"))) {
             out.writeObject(s);
         } catch (IOException e) {
             e.printStackTrace();
@@ -179,8 +178,8 @@ public class Main {
     }
 
     private static void serialize(String path, Profesor s) {
-        try (FileOutputStream fileOut = new FileOutputStream(path + File.separator + s.jmb + ".ser");
-             ObjectOutputStream out = new ObjectOutputStream(fileOut)) {
+        try (
+                ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(path + File.separator + s.jmb + ".ser"))) {
             out.writeObject(s);
         } catch (IOException e) {
             e.printStackTrace();

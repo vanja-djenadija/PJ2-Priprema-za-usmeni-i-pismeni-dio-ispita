@@ -3,8 +3,8 @@ package R_2022_02_09.Z02;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -31,13 +31,17 @@ public class Main {
             movies.add(m);
         }
 
+        // a
         Map<String, List<Movie>> mapa = movies.stream().collect(Collectors.groupingBy(m -> m.release_date));
         mapa.entrySet().forEach(System.out::println);
 
+        // b
         movies.stream().filter(m -> m.vote_average > 8.2).forEach(System.out::println);
 
+        // c
         movies.stream().filter(m -> m.budget > 10_000_000).forEach(System.out::println);
 
+        // d
         movies.stream().filter(m -> {
             Integer godina = Integer.parseInt(m.release_date.split("-")[0]);
             return godina > 2000 && godina <= 2010;
@@ -52,14 +56,15 @@ public class Main {
                 return (int) m.vote_average;
             return 0;
         })).entrySet().stream().skip(1).forEach(e -> System.out.println(e.getKey() + "+" + "\t" + e.getValue()));
-
         movies.stream().collect(Collectors.groupingBy(m -> m.release_date)).entrySet().forEach(System.out::println);
 
+        // f
         System.out.println("Prosječna oscjena filmova 90-ih " + movies.stream().filter(m -> {
             Integer godina = Integer.parseInt(m.release_date.split("-")[0]);
             return godina > 1990 && godina < 2000;
         }).mapToDouble(m -> m.vote_average).average().getAsDouble());
 
+        // g
         System.out.println("Ukupni budžet filmova snimljenih 80-ih godina " + movies.stream().filter(m -> {
             int godina = Integer.parseInt(m.release_date.split("-")[0]);
             return godina > 1980 && godina < 1990;

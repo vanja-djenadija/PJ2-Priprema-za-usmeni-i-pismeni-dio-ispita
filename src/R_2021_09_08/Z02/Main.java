@@ -55,7 +55,7 @@ public class Main {
 
         System.out.println("Prikaz svih razlicitih godina rodenja u formatu godina1#godina2#...koristenjem reduce metode");
         String rez = studenti.stream().mapToInt(s -> s.godinaRodj).distinct().sorted()
-                .mapToObj(String::valueOf).reduce("", (s1, s2) -> s1 + "#" +s2);
+                .mapToObj(String::valueOf).reduce("", (s1, s2) -> s1 + "#" + s2);
         System.out.println(rez);
     }
 
@@ -64,7 +64,7 @@ public class Main {
         String[] slova = new String[]{"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
         for (int i = 0; i < 80; i++) {
             Student s = new Student(slova[rand.nextInt(26)] + "Ime", slova[rand.nextInt(26)] + "Prezime",
-                    Integer.toString(rand.nextInt(2000)), rand.nextInt(17) + 1987, rand.nextInt(4) + 1, rand.nextDouble(6.0, 10.0));
+                    Integer.toString(rand.nextInt(2000)), rand.nextInt(17) + 1987, rand.nextInt(4) + 1, rand.nextDouble() * 10);
             studenti.add(s);
             //System.out.println(s);
         }

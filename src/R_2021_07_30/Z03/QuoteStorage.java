@@ -1,8 +1,7 @@
 package R_2021_07_30.Z03;
 
-import java.util.*;
+import java.util.ArrayList;
 
-public class QuoteStorage
-{
-	public static ArrayList<String> quotes = new ArrayList<>();
+public class QuoteStorage {
+    public static ArrayList<String> quotes = new ArrayList<>();
 }
