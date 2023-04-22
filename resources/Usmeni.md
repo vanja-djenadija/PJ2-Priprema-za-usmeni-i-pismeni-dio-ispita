@@ -83,7 +83,7 @@ class C extends A {...}
 
 3. **Izuzeci**
 
-   ![Exceptions hierarchy](resources\exceptions.png)
+   ![Exceptions hierarchy](exceptions.png)
 
    - metoda može u **throws** bacati izuzetak koji se ne može baciti u tijelu metode
    - **Compile Error**: ako se u **try bloku** ne može nikako baciti izuzetak koji catch blok hvata
@@ -96,7 +96,7 @@ class C extends A {...}
    - finally ima veću prednost od catch bloka
    - **Finally** se svakako izvršava, bez obzira da li je bačen izuzetak u try bloku
 
-   ![Zna da ima return; u finally bloku, ako ga izbacimo → kompajlerska greška](resources/return.png)
+   ![Zna da ima return; u finally bloku, ako ga izbacimo → kompajlerska greška](return.png)
 
    Zna da ima return; u finally bloku, ako ga izbacimo → kompajlerska greška
 
@@ -162,7 +162,7 @@ class C extends A {...}
 - **`Externalizable` nadjačava `Serializable`**
 - SVAKA klasa koja implementira **`Externalizable` MORA IMATI DEFAULT CTOR, jer se on prvo poziva u procesu deserijalizacije, inače `InvalidClassException`**
 - **Roditelj**, **Dijete** implementira **`Serializable`, Roditelj MORA imati default ctor → inače Runtime Exception, atributi roditelja** dobijaju default vrijednosti, a ne stvarne, u suprotnom Roditelj ne mora imati default ctor (jer se on ni ne poziva u tom slučaju)
-  ![Untitled](resources/ser.png)
+  ![Serialization image](ser.png)
 - Redoslijed deserializacije je bitan
 - S: Int + Long = 4 + 8 = 12
   D: Long + Int = 8 + 4 = 12
