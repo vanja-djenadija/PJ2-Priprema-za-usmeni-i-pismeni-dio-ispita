@@ -11,7 +11,7 @@ public class Liga{
 
 	public Liga(){
 		ime = "LIGA " + (++count);
-		timovi = Stream.generate(Tim::new).limit(16).collect(Collectors.toList());
+		timovi = Stream.generate(Tim::new).limit(16).collect(Collectors.toCollection(ArrayList::new));
 	}
 
 	public String toString(){

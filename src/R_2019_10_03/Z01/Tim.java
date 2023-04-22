@@ -1,5 +1,9 @@
 package R_2019_10_03.Z01;
 
+import java.util.ArrayList;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 public class Tim{
 
 	String ime;
@@ -8,7 +12,7 @@ public class Tim{
 
 	public Tim(){
 		ime = "TIM " + (++count);
-		timovi = Stream.generate(Kosarkas::new).limit(12).collect(Collectors.toList());
+		igraci = Stream.generate(Kosarkas::new).limit(12).collect(Collectors.toCollection(ArrayList::new));
 	}
 
 	public String toString(){

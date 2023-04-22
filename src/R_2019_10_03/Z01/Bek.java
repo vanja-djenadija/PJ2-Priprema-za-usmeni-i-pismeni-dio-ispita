@@ -4,6 +4,6 @@ public class Bek extends Kosarkas {
 
 	public Bek(){
 		super();
-		pogodak =
+		pogodak = 3;
 	}
 }

@@ -57,13 +57,64 @@ Akcenat je na konkurentnom programiranju i pravilnoj sinhronizaciji. Bitno je na
 
 ## :sun_with_face: Tips and tricks
 
-```
-    import java.util.*;
-    import java.io,*;
-```
+- Importovanje paketa
+  ```java
+      import java.util.stream.*;
+      import java.util.*;
+      import java.io,*;
+  ```
+- Svi atributi klase **default** paketski modifikator pristupa, bez navođenja public (manje kucanja), bez getter i setter metoda
+- **Default constructor** kod Stream API
 
-- `public` identifikator pristupa svih atributa, bez getter i setter metoda
-- `catch(Exception e)`
+  ```java
+  public Proizvod() {
+      id = "ID" + new Date().getTime();
+      naziv = "Proizvod" + count++;
+      opis = "Opis" + count;
+      cijena = new Random().nextInt(100) + 1000;
+      tip = (count % 2 == 0) ? Tip.KNJIGA : Tip.SVESKA;
+  }
+  ```
+
+- **toString** Override
+  ```java
+  @Override
+    public String toString() {
+        return id + " " + " " + naziv + " " + opis + " " + cijena + " " + tip.toString();
+    }
+  ```
+- **`catch(Exception e)`**
+- `java.util.Stream.toList()`
+- `Collectors.metoda()`
+- `stream().collect(Collectors.groupingBy(p -> p.tip))`
+- Konverzija String u TIP -> `TIP.parseTIP(string)`
+- Trenutno vrijeme `new Date().getTime()`
+- Kopiranje liste u drugu preko parametrizovanog konstruktora
+  ```java
+  ArrayList<Proizvod> copy = new ArrayList<>(original);
+  ```
+- Serijalizacija
+  ```java
+      String fajl = Main.class.getName() + "_" + new Date().getTime() + ".ser";
+      try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fajl))) {
+          oos.writeObject(copyProizvodi);
+      } catch (IOException e) {
+          e.printStackTrace();
+      }
+  ```
+- Deserijalizacija
+  ```java
+       try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fajlIn))) {
+              proizvodi = (ArrayList<Proizvod>) ois.readObject();
+              //proizvodi.forEach(System.out::println);
+          } catch (ClassNotFoundException | IOException e) {
+              e.printStackTrace();
+          }
+  ```
+- ```java
+  File[] file.listFiles()
+  ```
+-
 
 ## :page_facing_up: Praktični ispiti
 

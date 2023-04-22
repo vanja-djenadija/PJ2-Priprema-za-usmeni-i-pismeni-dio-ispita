@@ -2,7 +2,7 @@ package R_2019_10_03.Z01;
 
 import java.util.*;
 
-public abstract class Kosarkas{
+public class Kosarkas{
 
 	int broj;
 	double pogodak;
@@ -12,6 +12,6 @@ public abstract class Kosarkas{
 	}
 
 	public String toString(){
-		return "KOSARKAS " + ime;
+		return "KOSARKAS ";
 	}
 }
