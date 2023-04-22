@@ -48,10 +48,12 @@ Akcenat je na konkurentnom programiranju i pravilnoj sinhronizaciji. Bitno je na
 <details>
   <summary>Treći zadatak</summary>
 
-
 - Stream API
-- 
-</details>
+- </details>
+
+## Usmeni ispit
+
+[:arrow_forward: Usmeni ispit](resources/Usmeni.md)
 
 ## Tips and tricks
 
@@ -59,11 +61,11 @@ Akcenat je na konkurentnom programiranju i pravilnoj sinhronizaciji. Bitno je na
     import java.util.*;
     import java.io,*;
 ```
+
 - `public` identifikator pristupa svih atributa, bez getter i setter metoda
 - `catch(Exception e)`
 
-
-## Prošli ispiti
+## Praktični ispiti
 
 <details>
   <summary>29.06.2022</summary>
@@ -80,7 +82,6 @@ Akcenat je na konkurentnom programiranju i pravilnoj sinhronizaciji. Bitno je na
 2. Rad sa fajlovima
 3. Generici + Predicate + Consumer ExampleData1
 </details>
-
 
 <details>
   <summary>09.02.2022 ✅</summary>
@@ -129,7 +130,7 @@ Akcenat je na konkurentnom programiranju i pravilnoj sinhronizaciji. Bitno je na
 
 1. Simulacija kupovine na kasi
 2. Generici (Skladište, Podaci, Obavještenje , Alarmi)
-3. FileWatcher + Rad sa fajlovima + Simulacija DailyQuotes 
+3. FileWatcher + Rad sa fajlovima + Simulacija DailyQuotes
 </details>
 
 <details>
@@ -162,7 +163,6 @@ Akcenat je na konkurentnom programiranju i pravilnoj sinhronizaciji. Bitno je na
 
 <details>
   <summary>03.10.2019 ✅</summary>
-
 
 </details>
 
@@ -212,7 +212,7 @@ Akcenat je na konkurentnom programiranju i pravilnoj sinhronizaciji. Bitno je na
   <summary>05.10.2018</summary>
 
 1. Simulacija Kino dvorane
-2. ConsoleTable ***
+2. ConsoleTable \*\*\*
 3. Rad sa fajlovima
 </details>
 
@@ -236,7 +236,7 @@ Akcenat je na konkurentnom programiranju i pravilnoj sinhronizaciji. Bitno je na
   <summary>19.04.2018</summary>
 
 1. Simulacija voda, vatra, stijena
-2. Obrada sadržaja tekstualnih fajlova na različite načine (loader, processor, exporter) **
+2. Obrada sadržaja tekstualnih fajlova na različite načine (loader, processor, exporter) \*\*
 3. Stream API
 </details>
 
@@ -245,7 +245,7 @@ Akcenat je na konkurentnom programiranju i pravilnoj sinhronizaciji. Bitno je na
 
 1. Simulacija sakupljanje zlatnika robot, planinar, atletičar, skijaš
 2. Modifikacija konfiguracioni fajl
-3. Generička metoda **
+3. Generička metoda \*\*
 </details>
 
 <details>
@@ -262,7 +262,7 @@ Akcenat je na konkurentnom programiranju i pravilnoj sinhronizaciji. Bitno je na
   <summary>27.09.2017</summary>
 
 1. Fabrika, trake, mašine
-2. Proširenje prethodnog zadatka, Narudžbe, algoritam za raspoređivanje 
+2. Proširenje prethodnog zadatka, Narudžbe, algoritam za raspoređivanje
 3. Stream API
 </details>
 
@@ -302,7 +302,7 @@ Akcenat je na konkurentnom programiranju i pravilnoj sinhronizaciji. Bitno je na
   <summary>09.02.2017**</summary>
 
 1. Grad robovil Roboti
-2. Procesiranje **
+2. Procesiranje \*\*
 3. Class-creator
 </details>
 
@@ -321,14 +321,14 @@ Akcenat je na konkurentnom programiranju i pravilnoj sinhronizaciji. Bitno je na
 
 1. Takmičenje prepreke i bonusi
 2. Kopiranje fajlova, foldera
-3. XML, JSON -> Java klase 
+3. XML, JSON -> Java klase
 </details>
 
 <details>
   <summary>08.09.2016 **</summary>
 
 1. Muzički zapisi
-2. HTML Parser **
+2. HTML Parser \*\*
 3. Rad sa fajlovima
 </details>
 
