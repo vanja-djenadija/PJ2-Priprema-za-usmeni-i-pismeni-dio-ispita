@@ -40,8 +40,7 @@ public class Main {
 
             mapa.stream().sorted((o1, o2) -> o1.key - o2.key).limit(10).forEach(e -> System.out.println(e.key));
 
-            List<Objekat> list1 = mapa.stream().filter(o -> o.key > 5).collect(Collectors.toList());
-            List<Objekat> list = IntStream.range(0, list1.size()).filter(k -> k % 2 == 0).mapToObj(list1::get).toList();
+            List<Objekat> list = IntStream.range(0, mapa.size()).filter(i -> i % 2 == 0 && mapa.get(i).key > 5).mapToObj(mapa::get).collect(Collectors.toList());
             try (BufferedWriter bw = Files.newBufferedWriter(Path.of("./fajl.csv"))) {
                 list.forEach(o -> {
                     try {

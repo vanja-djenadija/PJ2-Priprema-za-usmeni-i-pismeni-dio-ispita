@@ -49,17 +49,19 @@ public class Main {
             System.out.print("Unesite opciju ");
             input = scan.nextLine();
             switch (input) {
-                case "a" -> {
-                    if(proizvodi.isEmpty())
+                case "a": {
+                    if (proizvodi.isEmpty())
                         System.out.println("Nema proizvoda.");
                     proizvodi.forEach(System.out::println);
+                    break;
                 }
-                case "b" -> {
+                case "b": {
                     System.out.print("Unesite id ");
                     String id = scan.nextLine();
                     proizvodi.stream().filter(p -> p.id.equals(id)).forEach(System.out::println);
+                    break;
                 }
-                case "c" -> {
+                case "c": {
                     System.out.print("Unesite id ");
                     String id = scan.nextLine();
                     System.out.print("Unesite naziv ");
@@ -77,21 +79,25 @@ public class Main {
                     Proizvod proizvod = new Proizvod(id, naziv, opis, cijena, tipInput);
                     proizvodi.add(proizvod);
                     System.out.println("Proizvod je dodan.");
+                    break;
                 }
-                case "d" -> {
+                case "d": {
                     System.out.print("Unesite id ");
                     String id = scan.nextLine();
-                    Proizvod proizvod = proizvodi.stream().filter(p -> p.id.equals(id)).limit(1).toList().get(0);
+                    Proizvod proizvod = proizvodi.stream().filter(p -> p.id.equals(id)).limit(1).collect(Collectors.toList()).get(0);
                     proizvodi.remove(proizvod);
+                    break;
                 }
-                case "e" ->
-                        proizvodi.stream().collect(Collectors.groupingBy(p -> p.tip)).forEach((k, v) -> System.out.println(k + " " + v));
-                case "f" -> {
+                case "e":
+                    proizvodi.stream().collect(Collectors.groupingBy(p -> p.tip)).forEach((k, v) -> System.out.println(k + " " + v));
+                    break;
+                case "f": {
                     System.out.print("Unesite donju cijenu ");
                     int min = Integer.parseInt(scan.nextLine());
                     System.out.print("Unesite gornju cijenu ");
                     int max = Integer.parseInt(scan.nextLine());
                     proizvodi.stream().filter(p -> p.cijena > min && p.cijena < max).forEach(System.out::println);
+                    break;
                 }
             }
         }

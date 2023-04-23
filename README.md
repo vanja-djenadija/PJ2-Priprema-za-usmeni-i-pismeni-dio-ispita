@@ -257,6 +257,22 @@ Akcenat je na konkurentnom programiranju i pravilnoj sinhronizaciji. Bitno je na
         return hash;
     }
   ```
+- Sortiranje kolekcije rastuće/opadajuće
+  ```java
+  stream().sorted(Comparator.reverseOrder()) // opadajuće
+  stream.sorted() // rastuće
+  ```
+- Svaki drugi ključ veći od 5 filtriranje
+  ```java
+  IntStream.range(0, mapa.size()).filter(i -> i % 2 == 0 && mapa.get(i).key > 5).mapToObj(mapa::get).collect(Collectors.toList());
+  ```
+- Slučajno izaberi jedno slovo iz engleskog alfabeta
+  ```java
+  char slovo = (char) (new Random().nextInt(26) + 'a');
+  ```
+
+
+
 
 ## :page_facing_up: Praktični ispiti
 
