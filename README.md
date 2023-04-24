@@ -270,6 +270,15 @@ Akcenat je na konkurentnom programiranju i pravilnoj sinhronizaciji. Bitno je na
   ```java
   char slovo = (char) (new Random().nextInt(26) + 'a');
   ```
+- Specijalni karakter se mora drugačije navoditi npr. tačka
+  ```java
+  .split("\\.") 
+  ```
+- Trenutni datum (yyyy-MM-dd)
+  ```java
+  import java.time.LocalDate;
+  LocalDate currentDate = LocalDate.now();
+  ```
 
 
 
