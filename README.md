@@ -125,30 +125,42 @@ Akcenat je na konkurentnom programiranju i pravilnoj sinhronizaciji. Bitno je na
 - **File Watcher**
 
   ```java
-    WatchService service = FileSystems.getDefault().newWatchService();
-    Path dir = Paths.get(args[0]);
-    dir.register(service, ENTRY_CREATE);
-    while (true) {
-        WatchKey key = null;
+    public class FileWatcher extends Thread {
+    public int cnt = 0;
+
+    public FileWatcher() {
+        setDaemon(true);
+    }
+
+    @Override
+    public void run() {
         try {
-            key = service.take();
-        } catch (InterruptedException e) {
+            WatchService service = FileSystems.getDefault().newWatchService();
+            Path dir = Paths.get(Main.PATH);
+            dir.register(service, ENTRY_CREATE);
+            while (true) {
+                WatchKey key = null;
+                try {
+                    key = service.take();
+                } catch (InterruptedException e) {
+                    System.out.println(e.getMessage());
+                }
+                for (WatchEvent<?> event : key.pollEvents()) {
+                    WatchEvent.Kind<?> kind = event.kind();
+                    WatchEvent<Path> ev = (WatchEvent<Path>) event;
+                    if (kind.equals(ENTRY_CREATE))
+                        cnt++;
+                }
+
+                boolean valid = key.reset();
+                if (!valid)
+                    break;
+            }
+        } catch (IOException e) {
             System.out.println(e.getMessage());
         }
-        for (WatchEvent<?> event : key.pollEvents()) {
-            WatchEvent.Kind<?> kind = event.kind();
-            WatchEvent<Path> ev = (WatchEvent<Path>) event;
-            Path filename = ev.context();
-            if (kind.equals(ENTRY_CREATE)) {
-                System.out.println("Kreiran novi fajl : " + filename);
-                glavnaMetoda(args[0], filename.toString());
-            }
-        }
-
-        boolean valid = key.reset();
-        if (!valid)
-            break;
     }
+}
   ```
 
 - čitanje fajla
@@ -279,8 +291,64 @@ Akcenat je na konkurentnom programiranju i pravilnoj sinhronizaciji. Bitno je na
   import java.time.LocalDate;
   LocalDate currentDate = LocalDate.now();
   ```
+- Stream MIN, MAX
+  ```java
+  grupa1.stream().min(Comparator.comparing(z -> z.tezina)).ifPresent(System.out::println);
+  ```
 
+- Folder Watcher
+  ```java 
+  public class FolderWatcher extends Thread {
 
+    String folder;
+    ArrayList<String> txt = new ArrayList<>();
+
+    public FolderWatcher(String folder) {
+        setDaemon(true);
+        this.folder = folder;
+    }
+
+    public void run() {
+        while (!Sakupljac_Watchera.END) {
+            try {
+                File[] files = new File(folder).listFiles();
+                for (File f : files) {
+                    String filename = f.getName();
+                    if (filename.endsWith(".txt") && !txt.contains(filename)) {
+                        System.out.println(">>> NEW FILE" + filename + " FOLDER: " + folder);
+                        Files.readAllLines(Path.of(folder, filename)).forEach(System.out::println);
+                        txt.add(filename);
+                    }
+                }
+                Thread.sleep(1000);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+  }
+  ```
+- Kod ProrityQueue ili HashMap/Set mora biti implementiran Comparable interfejs
+  ```java
+  implements Comparable<Podatak>
+  public int compareTo(Podatak p) {
+        return Integer.compare(hashCode(), p.hashCode());
+    }
+    ```
+- processData, varargs, Predicate, Consumer, generici
+  ```java
+   public static <T, V> void processData(List<Predicate<Data<T, V>>> predikati, Consumer<Data<T, V>> consumer, List<Data<T, V>>... listaPodataka) {
+        ArrayList<Data<T, V>> podaci = new ArrayList<>();
+        for (List<Data<T, V>> lista : listaPodataka) {
+            for (Data<T, V> data : lista) {
+                if (predikati.stream().allMatch(dataPredicate -> dataPredicate.test(data))) {
+                    podaci.add(data);
+                }
+            }
+        }
+        podaci.stream().sorted(Comparator.comparingInt(Object::hashCode)).forEach(consumer); // (d1, d2) -> d1.hashCode() - d2.hashCode()
+    }
+  ```
 
 
 ## :page_facing_up: Praktični ispiti
