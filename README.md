@@ -354,6 +354,16 @@ Akcenat je na konkurentnom programiranju i pravilnoj sinhronizaciji. Bitno je na
 ## :page_facing_up: Praktični ispiti
 
 <details>
+<summary>26.04.2023 ✅</summary>
+
+1. Letjelica sa pogonskim, komunikacionim i navigacionim modulom
+2. Rad sa fajlovima
+3. Simulacija biranja 2 studenta
+</details>
+
+--- 
+
+<details>
 <summary>29.06.2022 ✅</summary>
 
 1. Simulacija leta
