@@ -123,7 +123,6 @@ Akcenat je na konkurentnom programiranju i pravilnoj sinhronizaciji. Bitno je na
     kolekcija.stream().sorted(Comparator.comparingInt(Object::hashCode))
   ```
 - **File Watcher**
-
   ```java
     public class FileWatcher extends Thread {
     public int cnt = 0;
@@ -160,7 +159,7 @@ Akcenat je na konkurentnom programiranju i pravilnoj sinhronizaciji. Bitno je na
             System.out.println(e.getMessage());
         }
     }
-}
+  }
   ```
 
 - čitanje fajla
