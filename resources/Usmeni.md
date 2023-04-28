@@ -221,3 +221,10 @@ class C extends A {...}
   x = 3.14;
   ```
 - Implicitna konverzija tipa `byte -> short -> int -> long -> float -> double `
+- __Compile Error__ Nelegalan pokušaj kastovanja. *
+- __ClassCastException__ Sužavanje reference. *
+![brojevi](https://user-images.githubusercontent.com/130909026/235176432-32aba165-d573-4720-a8c3-b19f4912f11b.png)
+
+![bitski-operatori](https://user-images.githubusercontent.com/130909026/235176597-e6154d0e-426f-4cf7-b8b1-218818fb5903.png)
+
+- Kod izračunavanja izraza u kojima se nalaze vrijednosti **byte** i **short** vrši njihova promocija u **int**.
