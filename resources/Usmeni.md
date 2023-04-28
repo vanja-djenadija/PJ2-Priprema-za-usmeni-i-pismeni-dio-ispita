@@ -209,5 +209,7 @@ class C extends A {...}
 
 ### General notes
  ![literali](https://user-images.githubusercontent.com/130909026/235144517-6a923b3d-ef45-43a6-974e-c5f84e78da55.png)
+ 
  ![tipovi](https://user-images.githubusercontent.com/130909026/235145822-839f975a-d9f0-4053-8d3a-dc768d0225f9.png)
-
+ 
+![inic-blok](https://user-images.githubusercontent.com/130909026/235147837-db7536bc-3300-4cc0-9cd0-d8e5e27d18a3.png)
