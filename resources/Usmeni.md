@@ -242,8 +242,22 @@ class C extends A {...}
 - __Compile Error__ Poziv metode nad objektom, a metoda nije definisana u klasi tog objekta.
 - __Compile Error__ Pristup privatnom atributu neke klase.
 - Moguće je pristupiti statičkim poljima klase preko objekta te klase, ALI nije preporučljivo. `calculator.numberOfInstances()` umjesto `Calculator.numberOfInstances()`
-- **Ugnježdene klase** 
+- **Ugnježdene klase** 4.2.9 (45-46 str.)
     * Opseg vidljivosti ugnježdenih klasa je ograničen opsegom vidljivosti okružujuće klase.
+    * Ugnježdena klasa može pristupiti članovima okružujuće klase, čak i privatnim.
+    * Okružujuća klasa nema pristup članovima ugnježdene klase.
+    * Okružujuća klasa može biti samo `public` ili `friendly`, dok ugnježdene mogu biti `public`, `friendly`, `protected` i `private`.
+    * Postoje i _lokalne ugnježdene klase_, koje su deklarisane u nekom _bloku_ koda.
+    * Postoje **statičke** i **nestatičke** ugnježdene klase.
+    * Pristup nestatičkim članovima okružujuće klase iz statičke ugnježdene klase je moguć samo preko objekta okružujuće klase.
+    * Kreiranje objekta **statičke ugnježdene klase**.
+      ```java 
+      Outer.StaticNestedClass obj = new Outer.StaticNestedClass();
+      ```
+    * Kreiranje objekta **unutrašnje (nestatičke) klase**.
+      ```java 
+      Outer.InnerClass obj = outerObject.new InnerClass();
+      ```
     
 
 
