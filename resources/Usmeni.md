@@ -242,5 +242,8 @@ class C extends A {...}
 - __Compile Error__ Poziv metode nad objektom, a metoda nije definisana u klasi tog objekta.
 - __Compile Error__ Pristup privatnom atributu neke klase.
 - Moguće je pristupiti statičkim poljima klase preko objekta te klase, ALI nije preporučljivo. `calculator.numberOfInstances()` umjesto `Calculator.numberOfInstances()`
+- **Ugnježdene klase** 
+    * Opseg vidljivosti ugnježdenih klasa je ograničen opsegom vidljivosti okružujuće klase.
+    
 
 
