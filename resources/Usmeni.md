@@ -231,5 +231,16 @@ class C extends A {...}
 - Pomijeranje ulijevo << MNOŽENJE
 - Pomijeranje udesno >> DIJELJENJE Check? Da li se na gornjim pozicijama ubacuju nule ili znak koji je prethodno bio zbog održavanja znaka?
 - Short circuit && i || -> Drugi operand se neće izračunati ako se vrijednost rezultata može dobiti na osnovu prvog operanda.
-- ![operator-precedence](https://user-images.githubusercontent.com/130909026/235178981-1cdaee69-08e1-424b-9ca8-f36d30ad6fc5.png)
+
+![operator-precedence](https://user-images.githubusercontent.com/130909026/235178981-1cdaee69-08e1-424b-9ca8-f36d30ad6fc5.png)
+
+- Pri deklaraciji metode može da postoji samo jedan varargs parameter koji mora biti posljednji u listi parametara metode.
+- Moguće je deklarisati metodu koja ima identičan naziv nazivu konstruktora.
+- Ako klasa ne specificira nijedan konstruktor, kompajler će generisati implicitni podrazumijevani konstruktor.
+- Jedini zadatak implicitnog podrazumijevanog ctora je da pozove ctor roditeljske klase `super()`.
+- __Compile Error__ Ukoliko postoje nepodrazumijevani konstruktori, svaki pokušaj korištenja podrazumijevanog konstruktora dovodi do greške pri kompajliranju.
+- __Compile Error__ Poziv metode nad objektom, a metoda nije definisana u klasi tog objekta.
+- __Compile Error__ Pristup privatnom atributu neke klase.
+- Moguće je pristupiti statičkim poljima klase preko objekta te klase, ALI nije preporučljivo. `calculator.numberOfInstances()` umjesto `Calculator.numberOfInstances()`
+
 
