@@ -220,3 +220,4 @@ class C extends A {...}
   int x;
   x = 3.14;
   ```
+- Implicitna konverzija tipa `byte -> short -> int -> long -> float -> double `
