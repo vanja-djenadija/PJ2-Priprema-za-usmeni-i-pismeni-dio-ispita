@@ -207,6 +207,6 @@ class C extends A {...}
 
 - unutrašnja klasa
 
-### General notes!
-[literali](https://user-images.githubusercontent.com/130909026/235144517-6a923b3d-ef45-43a6-974e-c5f84e78da55.png)
+### General notes
+![literali](https://user-images.githubusercontent.com/130909026/235144517-6a923b3d-ef45-43a6-974e-c5f84e78da55.png)
 
