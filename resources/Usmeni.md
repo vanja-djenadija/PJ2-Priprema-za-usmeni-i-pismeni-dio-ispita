@@ -258,6 +258,14 @@ class C extends A {...}
       ```java 
       Outer.InnerClass obj = outerObject.new InnerClass();
       ```
+  - Konstante enumeracije su implicitno `public`, `static`, `final`.
+    * `enum-type [] values()`
+    * `enum-type valueOf(String str)`
+  - Enumeracije mogu imati konstruktore, metode i promjenljive, a mogu i implementirati interfejse (sve isto kao i bilo koja klasa).
+  - Ograničenje enum : Enum ne može naslijediti drugu klasu, enum ne može biti roditeljska klasa.
+  - `ordinal()` metoda Enum klase. (često na ispitu)
+  - 
+  
     
 
 
