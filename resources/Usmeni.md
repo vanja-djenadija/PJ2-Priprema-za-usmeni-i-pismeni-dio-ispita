@@ -228,3 +228,8 @@ class C extends A {...}
 ![bitski-operatori](https://user-images.githubusercontent.com/130909026/235176597-e6154d0e-426f-4cf7-b8b1-218818fb5903.png)
 
 - Kod izračunavanja izraza u kojima se nalaze vrijednosti **byte** i **short** vrši njihova promocija u **int**.
+- Pomijeranje ulijevo << MNOŽENJE
+- Pomijeranje udesno >> DIJELJENJE Check? Da li se na gornjim pozicijama ubacuju nule ili znak koji je prethodno bio zbog održavanja znaka?
+- Short circuit && i || -> Drugi operand se neće izračunati ako se vrijednost rezultata može dobiti na osnovu prvog operanda.
+- ![operator-precedence](https://user-images.githubusercontent.com/130909026/235178981-1cdaee69-08e1-424b-9ca8-f36d30ad6fc5.png)
+
