@@ -278,7 +278,6 @@ class C extends A {...}
 - `abstract private void metoda()` **ne** može, jer nije moguće onda napisati implementaciju te metode.
 - `abstract static void metoda()` **ne** može -> statička metoda ne može biti redefinisana
 - `astract final void metoda()` **ne** može
-  - 
   
     
 
