@@ -306,6 +306,33 @@ class C extends A {...}
   * `RuntimeException`
       - `ArithmeticException`
       - `ArrayIndexOutOfBoundsException`   
+      - `ClassCastException`
+      - `IllegalArgumentException`
+      - `NumberFormatException`
+      - `NullPointerException`
+      - `UnsupportedOperationException`
+      - `IllegalStateException`
+  * **Error**
+      - `OutOfMemoryError`
+      - `StackOverflowError` -> rekurzija npr.
+  * Nakon try bloka mora doći barem jedan catch ili finally blok.
+  * Tip u catch bloku mora biti Throwable ili neke klase nasljednice.
+  * __Compile Error__ Redoslijed klasa u catch bloku veče -> manjem nije dozvoljen, pravilno je uži tip -> širi tip.
+  * multi-catch blok Koje klase smiju biti u istom bloku? Da li samo one koje su na istom nivou u hijerarhiji?
+  * Metoda koja redefiniše metodu roditeljske klase može: (PODSKUP)
+    - baciti manje izuzetaka ili izostaviti throws klauzulu
+    - baciti iste izuzetke
+    - baciti izuzetke koji su podklase onih koji su bačeni u metodi koja je redefinisana
+  * try-with-resources
+    - mogu se naći resursi koji imaplementiraju `Closeable` ili `Autocloseable` interfejs pri čemu se po izlasku iz try automatski poziva `close()` metoda
+---
+- __Compile Error__
+  ```java
+  Calculator calc1 = new ExtendedCalculator(1, 2);
+  double sum = calc1.add();
+  // double product = calc1.multiply();
+  ```
+  
 
   
     
