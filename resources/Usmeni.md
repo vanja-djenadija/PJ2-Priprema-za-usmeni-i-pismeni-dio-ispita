@@ -326,12 +326,40 @@ class C extends A {...}
   * try-with-resources
     - mogu se naći resursi koji imaplementiraju `Closeable` ili `Autocloseable` interfejs pri čemu se po izlasku iz try automatski poziva `close()` metoda
 ---
-- __Compile Error__
+- __Compile Error__ Moguće je pozvati samo metode koje psotoje u Calculator, a ne i one u ExtendedCalculator.
   ```java
   Calculator calc1 = new ExtendedCalculator(1, 2);
   double sum = calc1.add();
   // double product = calc1.multiply();
   ```
+- Redefinisana metoda u izvedenoj klasi može imati povratni tip koji je podtip redefinisane metode, ne može smanjiti dostupnost, ali može povećati, može baciti sve, nijedan ili podskup provjerenih izuzetaka.
+- Metoda instance u klasi nasljednici ne može redefinisati statičku metodu osnovne klase- Ali može doći do skrivanja.
+- __Compile Error__ pokušaj redefinisanja final metode.
+- U izvedenoj klasi može se navesti metoda sa istim potpisom kao iz osnovne klase sa modifikatorom private koja nije dostupna u izvedenoj klasi.
+- Povratni tip ne pripada potpisu metode, prema tome za preklapanje metoda nije dovoljno da metode imaju različite povratne tipove, već listu parametara.
+- __Compile Error__ Metode se razlikuju samo po povratnom tipu.
+- Kompajler bira metodu sa najspecifičnijim parametrom.
+- __Compile Error__ Ukoliko kompajler nije u stanju da odredi koju metodu da izabere, jer parametri nisu u relaciji tip -> podtip.
+- ![redefinisanje-preklapanje](https://user-images.githubusercontent.com/130909026/235313329-b430a340-4add-4863-937a-26756048527d.png)
+- __Compile Error__ Statička metoda u klasi nasljednici ne može maskirati metodu instance osnovne klase.
+- Referenca `super` ne može biti kastovana, niti njenan vrijednost može biti dodijeljena drugim referencama.
+- **super** ili **this** su prvi izrazi u tijelu konstruktora
+- **super** i **this** ne mogu nikako biti zajedno u istom konstruktoru
+- Kompajler implicitno ubacuje **super()** ukoliko nije naveden 
+- __Compile Error__ Kompajler implicitno ubaci super(), a ne postoji default ctor u osnovnoj klasi.
+- Klasa ne može smanjiti dostupnost metode interfejsa, niti može specificirati novi izuzetak u throws klauzuli.
+- Metode interfejsa uvijek moraju biti implementirane kao metode instance, a ne kao statičke metode.
+- Ugnježdeni interfejsi **
+- Klasa može da redefiniđe default metodu interfejsa, ali i ne mora.
+- Statičke metode interfejsa se ne nasljeđuju od strane klase/interfejsa koja implementira interfejs. (TODO)
+- Privatne metode interfejsa se mogu pozvati samo od strane default metode ili druge privatne metode unutar interfejsa.
+- **instanceof** A instanceof B
+  * uvijek vraća `false` ako je A `null`
+  * zahtjeva provjeru za vrijeme kompajliranja i izvršavanja
+  * Provjera za vrijeme kompajliranja veza tip-podtip
+  * Za vrijeme izvršavanja je bitan stvarni tip objekta, a ne deklarisani tip.
+  * 
+
   
 
   
