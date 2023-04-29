@@ -278,6 +278,35 @@ class C extends A {...}
 - `abstract private void metoda()` **ne** može, jer nije moguće onda napisati implementaciju te metode.
 - `abstract static void metoda()` **ne** može -> statička metoda ne može biti redefinisana
 - `astract final void metoda()` **ne** može
+---
+- Moguće je i bez bloka
+  ```java 
+  if(value > 1) ; 
+  ```
+- U switchu može biti `Enum`, `char`, `String`, `byte`, `short` i `int` kao i Wrapper klase za ove primitivne tipove.
+- Labele moraju biti konstanti izrazi istog tipa kao i vrijednost u switch izrazu, i moraju biti jedinstvene, ne mogu postojati dvije case naredbe sa istom vrijednošću.
+- `break` naredba nakon svakog case-a inače se izvršavaju i naredne naredbe.
+- **Labele**
+  * nazivi labela se nalaze u posebnom prostoru imena, pa ne može doći do konflikta
+  * nalaze se ispred naredbe ili bloka koda
+  * greška -> dvije iste labele
+  * greška -> deklaracija promjenljive ne može biti ozhnačena labelom `label3: int i = 3;`
+  * `break labela`
+  * `continue labela`
+- Ako metoda završava bacanjem izuzetka, postojanje return naredbe nije neophodno.
+  ``` java
+  static int metoda() {
+    throw new RuntimeException();
+  }
+  ```
+- **Izuzeci**
+  * ![izuzeci](https://user-images.githubusercontent.com/130909026/235310673-31c26337-1362-4a08-870e-adda18231b0e.png)
+  * Kompajler ne zahtjeva da se obrade neprovjereni izuzeci (RuntimeException, Error i njihove izvedene klase).
+  * `InstantiationException` pokušaj instanciranja objekta apstraktne klase ili interfejsa
+  * `RuntimeException`
+      - `ArithmeticException`
+      - `ArrayIndexOutOfBoundsException`   
+
   
     
 
