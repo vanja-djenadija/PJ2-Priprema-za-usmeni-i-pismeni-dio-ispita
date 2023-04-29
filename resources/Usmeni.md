@@ -264,6 +264,20 @@ class C extends A {...}
   - Enumeracije mogu imati konstruktore, metode i promjenljive, a mogu i implementirati interfejse (sve isto kao i bilo koja klasa).
   - Ograničenje enum : Enum ne može naslijediti drugu klasu, enum ne može biti roditeljska klasa.
   - `ordinal()` metoda Enum klase. (često na ispitu)
+  - Iz statičkog konteksta se može pristupiti samo statičkim članovima, tako i reference `this` i `super` nisu dostipne iz statičkog konteksta.
+  - `public -> protected -> friendly -> private`
+  - Interfejsi su implicitno `abstract`, **može** se navesti ali je nepotrebno i redundatno.
+  - Enum tipovi **ne** mogu biti `abstract`.
+  - Enum tipovi su implicitno `final`, i **ne** mogu biti eksplicitno deklarisani kao `final`.
+  - `final` klase se **ne** mogu nasljeđivati.
+  - Klasa **ne** može biti u isto vrijeme i `final` i `abstract`.
+  - `final` promjenljive i reference ne mogu promijeniti vrijednost/referencu nakon inicijalizacije.
+  - Pomjenljive unutar interfejsa su implicitno `final, nije potreno navoditi, ali nije greška.
+  - Metode unutar interfejsa su implicitno `abstract`, nije potreno navoditi, ali nije greška.
+  - `final` promjenljiva ne mora biti inicijalizovana pri deklaraciji, ali mora prije korištenja.
+  - `abstract private void metoda()` **ne** može, jer nije moguće onda napisati implementaciju te metode.
+  - `abstract static void metoda()` **ne** može -> statička metoda ne može biti redefinisana
+  - `astract final void metoda()` **ne** može
   - 
   
     
