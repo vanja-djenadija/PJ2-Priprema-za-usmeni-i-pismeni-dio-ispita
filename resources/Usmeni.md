@@ -363,6 +363,29 @@ class C extends A {...}
   ```java 
   protected Object clone() throws CloneNotSupportedException
   ```
+- Klasa koju kloniramo a koja se oslanja na `clone()` iz Object klase mora implementirati interfejs `Cloneable`, u suprotnom se baca izuzetak `CloneNotSupportedException`.
+- Metoda `equals` vraća `true` ako i samo ako dvije reference koje se porede pokazuju na isti objekat. (Možemo je redefinisati da vrati true ako je sadržaj objekta isti)
+  ```java 
+  public boolean equals(Object obj)
+  ```
+- Metoda `hashCode` - vraća memorijsku adresu objekta podrazumijevano
+  ```java 
+  public int hashCode()
+  ```
+  * Ako su dva objekta jednaka, onda bi i njihovi hash-evi trebali biti jednaki -> redefinisanje hashCode metode.
+- `toString()` podrazumijevano vraća `nazivKlase@hashVrijednostObjekta` ukoliko nije redefinisana
+- Sve Wrapper klase za primitivne tipove su `immutable`, vrijednost ovih objekata se ne može promijeniti
+- `String` objekti su `immutable`
+  * Svi string literali sa identičnom sekvencom karaktera dijele samo jedan objekat klase String. 
+  * Konstantni izrazi koji se izračunavaju za vrijeme kompajliranja, a koji rezultuju identičnom sekvencom, dijeliće identičan objekat klase String.
+  * Svi stringovi kreirani pomoću `new` su različiti objekti, iako recimo imaju istu sekvencu karaktera.
+  * `StringBuilder` i `StringBuffer` implementiraju promjenljive sekvence karaktera.
+  * Pošto prethodne klase nemaju zajedničkog roditelja, njihove reference se ne mogu dovesti u relaciju sa `String` referencama, čak ni eksplicitnim kastovanjem.
+  * `StrignBuilder` nije sinhronizovana.
+  * Inicijalni kapacitet je 16, osim ako nije definisano u konstruktoru drugačije, za ctor sa argumentom String je str.length() + 16
+  * Objekti `StringBuilder` i `StringBuffer` moraju biti konvertovani u `String` kako bi se mogli porediti (jer ne redefinišu equals, hashCode metode i ne implementiraju Compareable interfejs)
+---
+
 
   
 
