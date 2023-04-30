@@ -358,7 +358,11 @@ class C extends A {...}
   * zahtjeva provjeru za vrijeme kompajliranja i izvršavanja
   * Provjera za vrijeme kompajliranja veza tip-podtip
   * Za vrijeme izvršavanja je bitan stvarni tip objekta, a ne deklarisani tip.
-  * 
+---
+- Metoda clone -> kreira se novi identični objekat (sa identičnim stanjem) - plitko kopiranje
+  ```java 
+  protected Object clone() throws CloneNotSupportedException
+  ```
 
   
 
