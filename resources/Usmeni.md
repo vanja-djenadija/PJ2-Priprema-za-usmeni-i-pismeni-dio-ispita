@@ -385,9 +385,46 @@ class C extends A {...}
   * Inicijalni kapacitet je 16, osim ako nije definisano u konstruktoru drugačije, za ctor sa argumentom String je str.length() + 16
   * Objekti `StringBuilder` i `StringBuffer` moraju biti konvertovani u `String` kako bi se mogli porediti (jer ne redefinišu equals, hashCode metode i ne implementiraju Compareable interfejs)
 ---
-
-
-  
+- Četiri apstraktne klase za rad sa ulazno-izlaznim podistemom : `InputStream`, `OutputStream`, `Reader`, `Writer`.
+- `InputStream` <-> `OutputStream` nasljednice:
+  * `AudioInputStream` 
+  * `ByteArrayInputStream`  `ByteArrayOutputStream`
+  * `FileInputStream` `FileOutputStream` -> imaju dosta klasa nasljednica npr. `BufferedInputStream`
+  * `FilterInputStream` `FilterOutputStream`
+  * `ObjectInputStream` `ObjectOutputStream`
+  * `PipedInputStream`  `PipedOutputStream`
+  * `SequenceInputStream`
+- `Reader` <-> `Writer` nasljednice:
+  * `BufferedReader`   `BufferedWriter` 
+  * `CharArrayReader` `CharArrayWriter`
+  * `FilterReader`   `FilterWriter`
+  * `InputStreamReader`   `OutputStreamWriter`
+  *                     `PrintWriter`
+  * `PipedReader` `PipedWriter`
+  * `StringReader`  `StringWriter`
+  * `URLReader`
+- **Serijalizacija** - 214-222 str.
+  * Da bi objekat neke klase bio serijalizovan, neophodno je da klasa implementira `java.io.Serializable` interfejs.
+  * `transient` i `static` promjenljive neće se serijalizovati.
+  * Svi referencirani objekti sadržavajućeg objekta moraju biti serijalizabilni da bi se mogli serijalizovati, inače se baca `NotSerializableException`
+  * Objekti klasa koje nasljeđuju serijalizabilnu klasu uvijek serijalizabilni.
+  * Kontrolisanje serijalizacije pomoću privatnih metoda koje ne pripadaju nijednom interfejsu:
+    - ```java
+      private void writeObject(ObjectOutputStream) throws IOException
+      private void readObject(ObjectInputStream) throws IOException, ClassNotFoudnException
+      ```
+   * Kontrolisanje se može izvršiti i pomoću `Externalizable` interfejsa
+     ```java
+     void writeExternal(ObjectOutput out) throws IOException
+     void readExternal(ObjectInput in) throws IOException, ClassNotFoudnException
+     ```
+     - Ove metode nadjačavaju writeObject i readObject.
+     - Kod deserijalizacije se poziva podrazumijevani konstruktor, a onda readExternal metoda.
+     - Ukoliko nema podrazumijevanog konstruktora desiće se `InvalidClassException`.
+     - Iako je **serialVersionUID** statička promjenljiva, ona se serijalizuje zajedno sa objektom.
+ ---
+ 
+ -
 
   
     
