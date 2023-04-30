@@ -411,12 +411,12 @@ class C extends A {...}
   * Kontrolisanje serijalizacije pomoću privatnih metoda koje ne pripadaju nijednom interfejsu:
     - ```java
       private void writeObject(ObjectOutputStream) throws IOException
-      private void readObject(ObjectInputStream) throws IOException, ClassNotFoudnException
+      private void readObject(ObjectInputStream) throws IOException, ClassNotFoundException
       ```
    * Kontrolisanje se može izvršiti i pomoću `Externalizable` interfejsa
      ```java
      void writeExternal(ObjectOutput out) throws IOException
-     void readExternal(ObjectInput in) throws IOException, ClassNotFoudnException
+     void readExternal(ObjectInput in) throws IOException, ClassNotFoundException
      ```
      - Ove metode nadjačavaju writeObject i readObject.
      - Kod deserijalizacije se poziva podrazumijevani konstruktor, a onda readExternal metoda.
