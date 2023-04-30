@@ -399,7 +399,7 @@ class C extends A {...}
   * `CharArrayReader` `CharArrayWriter`
   * `FilterReader`   `FilterWriter`
   * `InputStreamReader`   `OutputStreamWriter`
-  *                     `PrintWriter`
+  * `PrintWriter`
   * `PipedReader` `PipedWriter`
   * `StringReader`  `StringWriter`
   * `URLReader`
