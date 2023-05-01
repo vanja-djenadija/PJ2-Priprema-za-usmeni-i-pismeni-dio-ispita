@@ -490,7 +490,25 @@ class C extends A {...}
 - Kod `LinkedHashMap` se kod iteriranja mijenja poredak tako da će elementi kojima je najskorije pristupano biti posljednji obiđeni.
 ---
 
+- Na mjestu definisanja lambda izraza kreira se objekat anonimne klase koja implementira interfejs sa jednom apstraktnom metodom.
+- U tijelu lambda izraza paziti na bacanje izuzetaka. __Compile Error__ ako metoda funkcionalnog interfejsa ne baca izuzetak, a tijelo lambde baca.
+- __Compile Error__ Lambda izraz može da koristi samo finalne ili efektivno finalne promjenljive, što znači da se njena vrijednost ne može mijenjati u lambda izrazu.
+![lambde](https://user-images.githubusercontent.com/130909026/235467842-b38b25f3-657a-4d81-98d3-f3476517588b.png)
+- Reference metoda
+  ```java
+  Class::staticMethod()
+  object::instanceMethod()
+  Class::instanceMethod()
+  ```
+- Funkcionalni interfejsi u java.util.function paketu
+  * `Function`  `R apply(T t)`
+  * `Predicate`  `boolean test(T t)`
+  * `Consumer`    `void accept(T t)`
+  * `Supplier`    `T get()`
+- Postoje i BiFunction, BiPredicate i BiConsumer koji primaju dva argumenta.
+---
+
 -
-    
+
 
 
