@@ -508,7 +508,12 @@ class C extends A {...}
 - Postoje i BiFunction, BiPredicate i BiConsumer koji primaju dva argumenta.
 ---
 
--j
+- `IllegalStateException` dva poziva terminalne operacije nad istim stream-om.
+- `peek()` bude na ispitu
+- *lazy* operacije nad streamovima -> pipeline se izvršava vertikalno
+  ![lazy](https://user-images.githubusercontent.com/130909026/235481301-6f3855de-cd14-48cf-ae3b-95cb03b3b9fe.png)
+- combiner funkcija se ne izvršava ukoliko stream nije paralelan
+- ako imamo parallelStream za sabiranje brojeva npr. 1,2,3, a početna vrijednost je 1, svaka nit sabere svoje i combiner metoda vraća rezultat svih niti 2 + 3 + 4 = 9
 
 
 
