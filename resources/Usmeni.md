@@ -445,9 +445,32 @@ class C extends A {...}
 - Za razliku od Wrapper klasa, atomske promjenljive su promjenljive, tj. nisu immutable. -> nisu pogodne za ključeve u hash kolekcijama
 ---
 
-- 
-
+- Generički mehanizam -> referencni tipovi (klase, interfejsi i nizovi) i metode parametrizuju informacijama o tipu.
+- Nad nepoznatim tipom `T` je moguće pozivati samo metode iz `Object` klase.
+- Tipskoj promjenljivoj T ne može se pristupiti iz statičkog konteksta.
+- Ne postoji veza između različitih parametrizovanih tipova.
+- Parametrizaciju generičkog tipa nije moguće izvršiti primitivnim tipovima, već samo referencnim.
+- __Compile Error__ 
+  ```java
+  GenericBase<Integer> sub = new GenericSub<String>();
+  ```
+- Ograničavanje tipova `T extends Number` onda možemo koristiti i metode iz Number
+- `<?>` predstavlja bilo koji tip
+- `GenericHolder<? super Integer>` - bilo koji tip koji je supertip Integer-u, uključujući i Integer
+- `GenericHolder<? extends Number>` - bilo koji tip koji je podtip Number-u, uključujući i Integer
+- Generička metoda
+  ```java
+  boolean result = Util.<Long>.compare(i1, i2);
   
+  public class Util{
+    public static <T> boolean compare(GenericHolder<T> o1, GenericHolder<T> o2){
+        return o1.get().equals(o2.get());
+    }
+  ```
+- Raw tipovi - zamjena svih tipova sa Object
+- Konkretna klasa ne može naslijediti generički tip, već samo parametrizovani!
+- ![generici](https://user-images.githubusercontent.com/130909026/235428598-bf212887-1622-42d2-bf1e-747fbc114cc9.png)
+
     
 
 
