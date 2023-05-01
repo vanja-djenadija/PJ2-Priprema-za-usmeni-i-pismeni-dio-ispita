@@ -472,8 +472,25 @@ class C extends A {...}
 ![generici](https://user-images.githubusercontent.com/130909026/235428598-bf212887-1622-42d2-bf1e-747fbc114cc9.png)
 ---
 
-- 
+![kolekcije](https://user-images.githubusercontent.com/130909026/235449114-062e5cd8-8cad-421d-8761-7a97294061d4.png)
+![koelkcije-2](https://user-images.githubusercontent.com/130909026/235450471-dbbda7fe-295c-48f7-a59a-ba057102e3cd.png)
 
+- `ConcurrentModificationException` - ako je objekat klase modifikovan nakon što je iterator kreiran na bilo koji način osim kroz metode iteratora
+  * `HashSet`
+  * `LinkedHashSet`
+  * `TreeSet`
+  * `ArrayList`
+  * `LinkedList`
+  * `Vector`
+  * `HashMap`
+  * `Hashtable`
+- `HashSet` - inicijalni kapacitet = 16  faktor opterećenja = 0.75 ne garantuje se poredak
+- `Vector` klasa slična `ArrayList` samo je sinhronizovana, inicijalni kapacitet = 10 i udvostručava se
+- `PriorityQueue` inicijalni kapacitet = 11
+- Kod `LinkedHashMap` se kod iteriranja mijenja poredak tako da će elementi kojima je najskorije pristupano biti posljednji obiđeni.
+---
+
+-
     
 
 
