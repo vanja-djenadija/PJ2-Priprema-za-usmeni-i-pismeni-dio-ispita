@@ -469,7 +469,10 @@ class C extends A {...}
   ```
 - Raw tipovi - zamjena svih tipova sa Object
 - Konkretna klasa ne može naslijediti generički tip, već samo parametrizovani!
-- ![generici](https://user-images.githubusercontent.com/130909026/235428598-bf212887-1622-42d2-bf1e-747fbc114cc9.png)
+![generici](https://user-images.githubusercontent.com/130909026/235428598-bf212887-1622-42d2-bf1e-747fbc114cc9.png)
+---
+
+- 
 
     
 
