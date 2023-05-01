@@ -435,6 +435,16 @@ class C extends A {...}
 - statička metoda yield tekuća nit privremeno pauzira izvršavanje čime omogućava drugim jitima da sobiju procesorsko vrijeme. *
 - join pozvama nad drugom niti peouzrokovaće da tekuća nit čeka dok se nit nad kojom je join metoda pozvama ne okonča.
 - prioritet niti podrazumijevano 5, viši prioritet je bolji
+- `NullPointerException` ako je referenca null u `synchronized` bloku
+- Objekat klase `Timer` je pozadinska nit koja izvršava sve zadatke sekvencijalno. -> metode `cancel` i `purge`
+- `TimerTask`
+- ```java
+  (new Thread(runnable)).start();
+  executor.execute(runnable);
+  ```
+- Za razliku od Wrapper klasa, atomske promjenljive su promjenljive, tj. nisu immutable. -> nisu pogodne za ključeve u hash kolekcijama
+---
+
 - 
 
   
