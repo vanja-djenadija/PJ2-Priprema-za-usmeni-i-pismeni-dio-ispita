@@ -424,7 +424,18 @@ class C extends A {...}
      - Iako je **serialVersionUID** statička promjenljiva, ona se serijalizuje zajedno sa objektom.
  ---
  
- -
+- Niti dijele isti adresni prostor, a međunitna komunikacija nije skupa.
+- Metoda `start` može baviti izuzetak `ThreadStateExcepetion` u slučaju kada se pozove nad objektom nad kojim je već pozvana metoda start.
+- Java razlikuje korisničke i demonske niti.
+- Demonske niti rade u pozadini i obično wervisiraju korisničke niti.
+- Sve novokreirane niti su podrazumijevano korisničke niti.
+- `setDaemon` mora biti pozvana prije nego što je nit pokrenuta metodom start
+- Pokušaj promjene statusa niti nakon što je pokrenuta baca `IllegalThreadStateException`
+- Stanja niti SLIKA
+- statička metoda yield tekuća nit privremeno pauzira izvršavanje čime omogućava drugim jitima da sobiju procesorsko vrijeme. *
+- join pozvama nad drugom niti peouzrokovaće da tekuća nit čeka dok se nit nad kojom je join metoda pozvama ne okonča.
+- prioritet niti podrazumijevano 5, viši prioritet je bolji
+- 
 
   
     
