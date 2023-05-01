@@ -508,7 +508,7 @@ class C extends A {...}
 - Postoje i BiFunction, BiPredicate i BiConsumer koji primaju dva argumenta.
 ---
 
--
+-j
 
 
 
