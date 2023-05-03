@@ -147,7 +147,7 @@ class C extends A {...}
 ---
 
 7. **Serijalizacija →** uglavnom se izvršava, dosta caka
-
+   - BITNO https://www.geeksforgeeks.org/object-serialization-inheritance-java/
    - **Serializable** je markerski interfejs, ne mora se ništa implementirati
   može
       ```java
