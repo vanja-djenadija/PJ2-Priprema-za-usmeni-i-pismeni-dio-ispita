@@ -50,8 +50,6 @@ class G1 implements Externalizable {
         x = in.readInt();
         val = in.readDouble();
     }
-
-
 }
 
 class G2 implements Serializable {
@@ -92,12 +90,13 @@ class G3 extends G2 {
         super(g1);
     }
 
-	/*private void writeObject(ObjectOutputStream out)throws IOException {
+    private void writeObject(ObjectOutputStream out) throws IOException {
         System.out.println("G3 writeObject");
     }
+
     private void readObject(ObjectInputStream in)
-        throws IOException, ClassNotFoundException {
+            throws IOException, ClassNotFoundException {
         System.out.println("G3 readObject");
 
-    }*/
+    }
 }
