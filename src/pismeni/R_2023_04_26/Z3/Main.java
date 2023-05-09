@@ -12,7 +12,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // a + b
+        // a1 + b
         Stream.generate(Student::new).limit(2000).forEach(s -> {
             studenti.add(s);
         });

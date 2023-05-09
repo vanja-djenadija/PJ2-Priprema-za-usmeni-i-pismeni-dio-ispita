@@ -1,6 +1,6 @@
 package usmeni.Z36;
 
-class B1 {
+/*class B1 {
     B2 b2;
     private static int x = 10;
     private int y = 5;
@@ -81,11 +81,7 @@ class B1 {
                         b1.b2.metoda() + "\n" +
                         b3.metoda() + "\n" +
                         b1.b2.b3.metoda());
-        B5 b5 = new B1.B5(new B5.B6(), new B2(), new B3.B4.BI34() {
-            public int metoda() {
-                return B1.x * 2;
-            }
-        });
+        B5 b5 = new B1.B5(new B5.B6(), new B2(), () -> B1.x * 2);
         b5.izvrsi();
     }
-}
+}*/

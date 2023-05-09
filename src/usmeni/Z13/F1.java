@@ -37,7 +37,7 @@ class F2<T1 extends Number, T2> {
     String s;
 
     public F2() {
-        s = "a";
+        s = "a1";
     }
 
     public char getModified(int i) {

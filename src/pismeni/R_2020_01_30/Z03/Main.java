@@ -17,8 +17,8 @@ public class Main {
         System.out.println("GRUPA 2");
         grupa2.stream().forEach(System.out::println);
 
-        // a
-        // spajanje grupe zečeva - spojiti dvije grupe, tako što se spajaju u prvu, a iz druge grupe se svi uklanjaju nakon spajanja.
+        // a1
+        // spajanje grupe zečeva - spojiti dvije grupe, tako što se spajaju u prvu, a1 iz druge grupe se svi uklanjaju nakon spajanja.
         grupa2.stream().forEach(z -> {
             grupa1.add(z);
         });

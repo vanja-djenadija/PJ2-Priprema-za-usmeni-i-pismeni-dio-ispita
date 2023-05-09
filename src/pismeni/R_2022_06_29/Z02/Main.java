@@ -39,7 +39,7 @@ public class Main {
         String input = "";
         while (!"END".equals(input)) {
             System.out.println();
-            System.out.println("a. Pregled svih proizvoda");
+            System.out.println("a1. Pregled svih proizvoda");
             System.out.println("b. Pregled jednog proizvoda po sifri");
             System.out.println("c. Dodavanje proizvoda");
             System.out.println("d. Brisanje jednog proizvoda po sifri");
@@ -49,7 +49,7 @@ public class Main {
             System.out.print("Unesite opciju ");
             input = scan.nextLine();
             switch (input) {
-                case "a": {
+                case "a1": {
                     if (proizvodi.isEmpty())
                         System.out.println("Nema proizvoda.");
                     proizvodi.forEach(System.out::println);

@@ -6,24 +6,24 @@ import java.io.Serializable;
 class A3 {
 
     static {
-        System.out.println("A3-S2");
+        System.out.println("a3-S2");
     }
 
     public A3() {
-        System.out.println("A3()");
+        System.out.println("a3()");
     }
 
     {
-        System.out.println("A3-N1");
+        System.out.println("a3-N1");
     }
 
     public void metoda() {
         new A2();
-        System.out.println("metoda-A3()");
+        System.out.println("metoda-a3()");
     }
 
     static {
-        System.out.println("A3-S1");
+        System.out.println("a3-S1");
     }
 }
 
@@ -44,13 +44,13 @@ class A2 extends A3 {
     public A2(A3 a3) {
         this();
         this.metoda();
-        System.out.println("A2(A3)");
+        System.out.println("A2(a3)");
     }
 
 
     public A2(A3 a3, A2 a2) {
         this(a3);
-        System.out.println("A2(A3,A2)");
+        System.out.println("A2(a3,A2)");
         method1();
 
     }
@@ -86,12 +86,12 @@ class A4 extends A2 implements Serializable {
 }
 
 
-class A1 extends A2 {
+public class A1 extends A2 {
     public static void main(String[] args) {
-        A1 a1 = new A1();
+        //A1 a1 = new A1();
         Serializable s1 = new A4();
-        a1.metoda();
-        ((A2) s1).method1();
+        //a1.metoda();
+        //((A2) s1).method1();
     }
 
     public void metoda() {

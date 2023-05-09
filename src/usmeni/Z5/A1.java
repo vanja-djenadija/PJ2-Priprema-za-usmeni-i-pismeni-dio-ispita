@@ -53,30 +53,30 @@ class A3 extends A2 {
     A2 a2 = null;
 
     static {
-        System.out.println("A3-S");
+        System.out.println("a3-S");
     }
 
     {
-        System.out.println("A3-N");
+        System.out.println("a3-N");
     }
 
     public A3() {
         super();
-        System.out.println("A3()");
+        System.out.println("a3()");
     }
 
     public A3(A2 a2) {
         this.a2 = a2;
-        System.out.println("A3(A2)");
+        System.out.println("a3(A2)");
     }
 
     public A3(A1 a1, A2 a2) {
         this(a2);
-        System.out.println("A3(A1,A2)");
+        System.out.println("a3(A1,A2)");
     }
 
     public void metoda2() {
-        System.out.println("A3.metoda()");
+        System.out.println("a3.metoda()");
     }
 }
 

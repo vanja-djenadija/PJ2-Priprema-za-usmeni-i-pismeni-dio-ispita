@@ -9,6 +9,14 @@
       <excludeFolder url="file://$MODULE_DIR$/src/usmeni/Z30" />
       <excludeFolder url="file://$MODULE_DIR$/src/usmeni/Z33" />
       <excludeFolder url="file://$MODULE_DIR$/src/usmeni/Z35" />
+      <excludeFolder url="file://$MODULE_DIR$/src/usmeni/Z36" />
+      <excludeFolder url="file://$MODULE_DIR$/src/usmeni/OL1OL2/P3" />
+      <excludeFolder url="file://$MODULE_DIR$/src/usmeni/OL1OL2/P4" />
+      <excludeFolder url="file://$MODULE_DIR$/src/usmeni/OL1OL2/P6" />
+      <excludeFolder url="file://$MODULE_DIR$/src/usmeni/primjeri/Klasa2" />
+      <excludeFolder url="file://$MODULE_DIR$/src/usmeni/primjeri/Klasa4" />
+      <excludeFolder url="file://$MODULE_DIR$/src/usmeni/primjeri/Klasa5" />
+      <excludeFolder url="file://$MODULE_DIR$/src/usmeni/primjeri2/T2" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

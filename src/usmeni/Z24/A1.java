@@ -56,20 +56,20 @@ class A2 extends A1 {
 
 class A3 {
     {
-        System.out.println("A3-N1");
+        System.out.println("a3-N1");
     }
 
     public A3() {
-        System.out.println("A3");
+        System.out.println("a3");
     }
 
     {
-        System.out.println("A3-N2");
+        System.out.println("a3-N2");
     }
 
     public A3(A2 a2, A1 a1) {
         super();
-        System.out.println("A3(A2,A1)");
+        System.out.println("a3(A2,A1)");
     }
 }
 

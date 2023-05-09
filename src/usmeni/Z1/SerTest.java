@@ -9,7 +9,7 @@ public class SerTest {
         G2 g2 = new G2();
         G3 g3 = new G3(g1);
         ObjectOutputStream cout =
-                new ObjectOutputStream(new FileOutputStream("G1.out"));
+                new ObjectOutputStream(new FileOutputStream("g1.out"));
         cout.writeObject(g3);
         System.out.println(G2.i);
         cout.writeObject(g2);
@@ -18,7 +18,7 @@ public class SerTest {
         cout.close();
         System.out.println("Data saved!!");
         ObjectInputStream cin =
-                new ObjectInputStream(new FileInputStream("G1.out"));
+                new ObjectInputStream(new FileInputStream("g1.out"));
         G3 g33 = (G3) cin.readObject();
         System.out.println(g33.g1.x + " " + g33.a + " " + g33.c);
         G2 g22 = (G2) cin.readObject();
@@ -35,18 +35,18 @@ class G1 implements Externalizable {
     double val = 10.4;
 
     public G1() {
-        System.out.println("G1");
+        System.out.println("g1");
     }
 
     public void writeExternal(ObjectOutput out) throws IOException {
         out.writeInt(x);
         out.writeDouble(val);
-        System.out.println("G1 writeExternal");
+        System.out.println("g1 writeExternal");
     }
 
     public void readExternal(ObjectInput in)
             throws IOException, ClassNotFoundException {
-        System.out.println("G1 readExternal");
+        System.out.println("g1 readExternal");
         x = in.readInt();
         val = in.readDouble();
     }

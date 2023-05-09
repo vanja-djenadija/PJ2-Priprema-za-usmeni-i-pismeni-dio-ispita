@@ -59,17 +59,17 @@ class A3 extends A2 {
 
     public A3() {
         a2.metoda();
-        System.out.println("A3");
+        System.out.println("a3");
         a.metoda();
     }
 
     public A3(A1 a1) {
         super(a1);
-        System.out.println("A3(A1)");
+        System.out.println("a3(A1)");
     }
 
     public void metoda() {
-        System.out.println("metoda A3");
+        System.out.println("metoda a3");
     }
 }
 

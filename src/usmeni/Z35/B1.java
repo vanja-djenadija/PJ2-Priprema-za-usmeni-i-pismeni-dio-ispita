@@ -4,7 +4,7 @@ package usmeni.Z35;
 
 import java.io.IOException;
 
-class B1 implements BI1 {
+/*class B1 implements BI1 {
     //{
     String j = "j";
 
@@ -26,7 +26,7 @@ class B1 implements BI1 {
         b1.print(b1.j);
         b2.print("av");
         b2.close();
-        BI3 tmp = (BI3) b2.clone();
+        BI2.BI3 tmp = (BI2.BI3) b2.clone(); // compile error BI3 navedeno samo, ali je to ugnje\deni interfejs i ne pristupa mu se direktno
         System.out.println(tmp == b2);
         System.out.println(((B2) tmp).str == ((B2) b2).str);
         b4.print("b3");
@@ -92,4 +92,4 @@ abstract interface BI2 extends BI1 {
         }
     }
 
-}
+}*/

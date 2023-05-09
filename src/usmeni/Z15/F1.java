@@ -25,7 +25,7 @@ class F1<T1, T2 extends Number, T3>
         F2 f2 = new F2<List<Integer>, Double>(numbers, 1.5);
         F3 f3 = new F3<>(numbers.get(2), 15, new Integer(127));
         F2<Double, Double> test = new F2<>(2.3, 2.3);
-        //F3 test1 = new F3<Integer, String, Character>(2, "test", new Character('a')); compile error
+        //F3 test1 = new F3<Integer, String, Character>(2, "test", new Character('a1')); compile error
         System.out.println(test.toPercentage());
         //System.out.println(test1.getString());
         System.out.println(f1.print());

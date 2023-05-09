@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
-// NOTE: Trebalo je staviti * na mjesto suglasnika, a u zadatku su korišteni samoglasnici
+// NOTE: Trebalo je staviti * na mjesto suglasnika, a1 u zadatku su korišteni samoglasnici
 public class Treca extends Thread {
     String slovo;
     ArrayList<String> samoglasnici = new ArrayList<>();
@@ -13,7 +13,7 @@ public class Treca extends Thread {
 
     public Treca(String slovo) {
         this.slovo = slovo;
-        samoglasnici.add("a");
+        samoglasnici.add("a1");
         samoglasnici.add("e");
         samoglasnici.add("i");
         samoglasnici.add("o");

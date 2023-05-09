@@ -31,7 +31,7 @@ public class Main {
             movies.add(m);
         }
 
-        // a
+        // a1
         Map<String, List<Movie>> mapa = movies.stream().collect(Collectors.groupingBy(m -> m.release_date));
         mapa.entrySet().forEach(System.out::println);
 

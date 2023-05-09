@@ -1,23 +1,23 @@
 package usmeni.Z12;
 
-// G1.java
+// g1.java
 
 import java.io.*;
 
 class G1 {
     public static void main(String args[]) throws Exception {
         G2 g2 = new G2();
-        G3 g3 = new G3("a");
+        G3 g3 = new G3("a1");
         G4 g4 = new G4();
         G5 g5 = new G5();
         ObjectOutputStream cout =
-                new ObjectOutputStream(new FileOutputStream("G1.out"));
+                new ObjectOutputStream(new FileOutputStream("g1.out"));
         cout.writeObject(g2);
         cout.writeObject(g3);
         cout.writeObject(g4);
         cout.writeObject(g5);
         ObjectInputStream cin =
-                new ObjectInputStream(new FileInputStream("G1.out"));
+                new ObjectInputStream(new FileInputStream("g1.out"));
         G2 g22 = (G2) cin.readObject();
         System.out.println(g22.a + "\n" + g22.b);
         G3 g33 = (G3) cin.readObject();
@@ -99,7 +99,7 @@ class G6 {
 }
 
 class G5 extends G4 implements Serializable {
-    G3 g3 = new G3("a");
+    G3 g3 = new G3("a1");
 
     public G5() {
         System.out.println("G5 konstruktor");
