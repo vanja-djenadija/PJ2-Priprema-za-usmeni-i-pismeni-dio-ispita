@@ -553,7 +553,7 @@ class C extends A {...}
       super();
       System.out.println("B3()");
    } 
- public void metoda() {
+  public void metoda() {
     System.out.println("B3 metoda...");
    }
   }
