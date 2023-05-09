@@ -74,6 +74,7 @@ class C extends A {...}
 
 2. **Hijerarhije klasa, interfejsi, preklapanje metoda, statičke/unutrašnje klase, anonimne klase**
    - hijerarhiju klasa, interfejsa provjeriti (abstract ako nešto nije implemenirano, ali može biti negdje drugo implicitno implementirano)
+   - weakening type, metode u interfesu su po defaultu public, ukoliko implementiramo metodu bez `public` metoda je `friendly` -> __Compile Error__
    - hashCode, equals redefinisanje
    - ispis objekata NazivKlase@hashCode
    - **TODO**: Načini kreiranja statičkih i nestatičkih ugnježdenih klasa!
@@ -514,6 +515,51 @@ class C extends A {...}
   ![lazy](https://user-images.githubusercontent.com/130909026/235481301-6f3855de-cd14-48cf-ae3b-95cb03b3b9fe.png)
 - combiner funkcija se ne izvršava ukoliko stream nije paralelan
 - ako imamo parallelStream za sabiranje brojeva npr. 1,2,3, a početna vrijednost je 1, svaka nit sabere svoje i combiner metoda vraća rezultat svih niti 2 + 3 + 4 = 9
+
+---
+- Wrapper tipovi za brojeve se mogu kastovati samo preko svojih metoda, a ne npr `Integer i = d` ili  `Integer i = (Integer) d` i slično.
+- B1 b1 = b2; b1.metoda(); Pošto je objekat referenciram preko B1 onda se gleda da li B1 ima metodu metoda(), ako ima ona se koristi, ako nema, pretražuje se dublje u hijerarhiji, tako da se bira ona metoda koja je najbliža vrhu.
+  ```java
+   public abstract class B1 { 
+     B1() {
+        super();
+        System.out.println("B1()");
+     }
+
+   public static void main(String[] args) {
+      B3 b3 = new B3();
+      b3.metoda();
+      B2 b2 = b3;
+      b2.metoda();
+      B1 b1 = b2;
+      b1.metoda();
+   }
+
+   private void metoda() {
+      System.out.println("B1 metoda...");
+   }
+  }
+  abstract class B2 extends B1 { 
+   B2() {
+      System.out.println("B2()");
+   } 
+   abstract protected void metoda(); 
+   void metoda2() {
+      System.out.println("B2 metoda...");
+   }
+  }
+  final class B3 extends B2 { 
+   B3() {
+      super();
+      System.out.println("B3()");
+   } 
+  public void metoda() {
+    System.out.println("B3 metoda...");
+   }
+  }
+```
+- UVIJEK PAZITI na privatne atribute članove i statički/nestatički kontekst
+    
 
 
 
