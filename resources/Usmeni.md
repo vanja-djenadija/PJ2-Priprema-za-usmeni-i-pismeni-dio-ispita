@@ -74,6 +74,7 @@ class C extends A {...}
 
 2. **Hijerarhije klasa, interfejsi, preklapanje metoda, statičke/unutrašnje klase, anonimne klase**
    - hijerarhiju klasa, interfejsa provjeriti (abstract ako nešto nije implemenirano, ali može biti negdje drugo implicitno implementirano)
+   - weakening type, metode u interfesu su po defaultu public, ukoliko implementiramo metodu bez `public` metoda je `friendly` -> __Compile Error__
    - hashCode, equals redefinisanje
    - ispis objekata NazivKlase@hashCode
    - **TODO**: Načini kreiranja statičkih i nestatičkih ugnježdenih klasa!
