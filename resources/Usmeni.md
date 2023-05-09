@@ -558,6 +558,7 @@ class C extends A {...}
    }
   }
 ```
+- UVIJEK PAZITI na privatne atribute članove i statički/nestatički kontekst
     
 
 
