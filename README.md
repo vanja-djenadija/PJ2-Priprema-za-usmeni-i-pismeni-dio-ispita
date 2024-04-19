@@ -1,5 +1,7 @@
 # Programski jezici 2 - Pismeni dio ispita
 
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/gbraad)
+
 ## :pushpin: Oblasti
 
 1. Uvod
