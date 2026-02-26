@@ -1,0 +1,539 @@
+1.
+
+a) 
+Ovako nesto, ali nije bio stackoverflow vec se u nekom od konstruktora pozivao objekat koji nije jos napravljen
+import java.util.*;
+import java.io.*;
+public class A1 {
+	static private A1 a1;
+	static {
+		System.out.println("A1-S");
+	}
+	{
+		System.out.println("A1-N");
+	}
+	protected A1() {
+		System.out.println("A1");
+	}
+	public A1(A1 a1) {
+		System.out.println("A1(A1)");
+		this.a1 = a1;
+		System.out.println("---");
+		new A2(a1);
+	}
+	void metoda() {
+		System.out.println("metoda A1");
+	}
+	protected static A1 getA1(){
+	    if(a1==null) return new A1();
+	    else return a1;
+	}
+	public static void main(String[] args) {
+	
+		A4 a4 = new A4();
+		a4.metoda();
+	
+	}
+}
+class A2 extends A1 {
+	A1 a1 = new A4();
+	static {
+		System.out.println("A2-S");
+	}
+	{
+		System.out.println("A2-N");
+	}
+	public A2() {
+		this(A1.getA1());
+		System.out.println("A2");
+	}
+	public A2(A1 a1) {
+		this.a1 = a1;
+		System.out.println("A2(A1)");
+	}
+	private void metoda2() {
+		System.out.println("metoda2 A2");
+	}
+}
+class A3 extends A2 implements Serializable {
+	static {
+		System.out.println("A3-S");
+	}
+	{
+		System.out.println("A3-N");
+	}
+	private A3() {
+		System.out.println("A3");
+	}
+	public A3(A1 a1) {
+		this();
+		System.out.println("A3(A2)");
+	}
+	public A3(A2 a2, A1 a1) {
+		this(a2);
+		System.out.println("A3(A2, A1)");
+	}
+	void metoda() {
+		System.out.println("metoda A3");
+	}
+	void metoda2() {
+		System.out.println("metoda2 A3");
+	}
+}
+class A4 extends A3 {
+	private A1 a = new A1();
+	private A2 a2 = new A2(new A1(new A1(new A1(new A2()))));
+	Serializable a3 = new A3(a2, a1);
+	static {
+		System.out.println("A4-S");
+	}
+	{
+		System.out.println("A4-N");
+	}
+	public A4() {
+	    super(A1.getA1());
+		System.out.println("A4");
+	}
+	protected void metoda() {
+		System.out.println("metoda A4");
+	}
+}
+
+
+c)
+import java.util.*;
+
+public class C1 {
+	C2 c2 = new C2();
+	C1() {
+		System.out.println("C1");
+	}
+	public static void main(String[] args) throws Exception {
+		C1 c1 = new C1();
+		try {
+			c1.metoda();
+			System.out.println("main 1");
+		} catch (CE2 e) {
+			System.out.println("main 2: " + e);
+		} catch (CE1 e) {
+			System.out.println("main 3: " + e);
+		} catch (Error e) {
+			System.out.println("main 4: " + e);
+		} catch (Throwable e) {
+			System.out.println("main 5: " + e);
+		} finally {
+			System.out.println("finally 1");
+		}
+		try(C3 c3 = new C3()) {
+			c3.metoda();
+		}
+	}
+	void metoda() throws Throwable {
+		try {
+			c2.metoda();
+			System.out.println("C1: metoda()");
+		} finally {
+			System.out.println("finally 2");
+		}
+	}
+}
+class C2 {
+	C3 c3;
+	C2() {
+		System.out.println("C2");
+	}
+	void metoda() throws CE1 {
+		System.out.println("C2: metoda()");
+		c3.metoda();
+	}
+}
+
+class C3 implements AutoCloseable {
+	C3() {
+		System.out.println("C3");
+	}
+	C3(String s) {
+		this();
+		System.out.println("C3 " + s);
+	}
+	protected void metoda() {
+
+		System.out.println("C3: metoda()");
+
+	}
+
+	@Override
+	public void close() throws Exception {
+		System.out.println("C3: close()");
+	}
+
+
+}
+class CE1 extends Exception {
+	CE1(String s) {
+		super(s);
+		System.out.println("CE1: " + s);
+	}
+}
+class CE2 extends CE1 {
+	CE2(String s) throws CE1 {
+		super(s);
+		System.out.println("CE2: " + s);
+		throw new CE1(s);
+	}
+}
+
+
+e)
+	public class E1 extends Thread {
+	public static void main(String x[]) throws InterruptedException {
+		System.out.println("one");
+		E2 niz[] = {new E3("A"), new E3("B"), new E2(), new E3("D"),
+			new E3("E")
+		};
+		System.out.println("two");
+		for (E2 e : niz) {
+			System.out.println(e.id);
+			if (e instanceof E3) {
+				new Thread(e).start();
+			} else {
+				e.start();
+				e.join();
+			}
+		}
+		System.out.println("three");
+	}
+}
+class E2 extends Thread {
+	String id;
+	public E2() {
+		this("C");
+	}
+	E2(String id) {
+		System.out.println("E2(): " + id);
+		this.id = id;
+		if(id.equals("E")) {
+			new E3("F").start();
+		}
+	}
+	public void run() {
+		for (int i = 1; i < 6; i++) {
+			try {
+				sleep(1);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			System.out.println(id + ": " + i);
+		}
+		new Thread(new Runnable() {
+			public void run() {
+				for(int i=0; i<10; i++) {
+					System.out.println(id + "1: " + i);
+				}
+			}
+		}).start();
+		new Thread() {
+			public void run() {
+				System.out.println(id + ": Thread start...");
+				synchronized (this) {
+					try {
+						super.join();
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+					for (int i = 0; i < 10; i++) {
+						System.out.println(id + "2: " + i);
+					}
+				}
+			}
+		} .start();
+	}
+}
+class E3 extends E2 implements Runnable {
+	E3(String id) {
+		super(id);
+		System.out.println("E3()");
+	}
+}
+
+
+2.
+
+import java.util.*;
+
+class M1{
+    M1 m;
+    M2 m2;
+    int[] im=new int[15000000];
+    long[] lm=new long[5000000];
+    char[] cm=new char[25000000];
+    M1 m2a[][][]=new M1[3][3][2];
+    int id2;
+    
+    public M1(int id2){
+        this.id2=id2;
+        System.out.println("M1: "+id2);
+    }
+    
+    public M1(M1 m, int id2, M2 m2){
+        this.m=m;
+        this.m2=m2;
+        this.id2=id2;
+        System.out.println("M1: "+id2);
+    }
+    
+    public void finalize(){
+        System.out.println(id2+ " : finalize");
+    }
+    
+    public static void main(String[] args){
+	//nesto ovako, pa negdje dodje do outofmemoryerrora, velicina heapa 1250mb
+        M1 m10=new M1(200);
+        M2 m2=new M2(300,m10);
+        M1 m12=new M1(m10,201,m2);
+        M2 m3=new M2(301,m12);
+	M1 m11=new M1(202);
+        
+        
+        m12.m2a[0][0][0]=new M1(203);
+		m12.m2a[0][0][1]=new M1(205);
+        m12.m2a[0][1][1]=new M1(204);
+        
+        m12.m2a[1]=null;
+        System.gc();//1
+        m10.m2a[0][0][0]=new M1(205);
+	
+	//itd...
+    }
+}
+
+
+
+class M2{
+    int id;
+    byte[] b=new byte[40000000];
+    float[] fm=new float[15000000];
+    M1 m1=new M1(999);
+    
+    public M2(int id, M1 m1){
+        this.m1=m1;
+        this.id=id;
+        System.out.println("M2: "+id);
+    }
+    
+    public void finalize(){
+        System.out.println(id+ " : finalize");
+    }
+}
+
+3. 
+
+a)
+import java.util.stream.*;
+import java.util.*;
+
+public abstract class T1 {
+    private static String niz[] = { "jedan", "dva", "cetiri", "sest", "osam", "deset" };
+
+    public static void main(String[] args) {
+       List<String>s= Arrays.asList(niz);
+                s.stream().peek(p -> System.out.println(p)).filter(f -> f.length() >= 4)
+                .filter(f -> f.startsWith("j")) .map(f -> f + f).filter(f -> f.length() <= 12).sorted()
+                .forEach(k -> {
+                    System.out.println(k);
+                });
+    }
+}
+
+
+b)
+import java.util.stream.*;
+import java.util.*;
+
+public class T2 {
+
+    String outerProperty = "A";
+
+    void method() {
+        N nestedClass = new N();
+        nestedClass.method();
+    }
+
+    public class N {
+        String innerProperty = "B";
+
+        void method() {
+            System.out.print(outerProperty + innerProperty);
+        }
+    }
+
+    public static void main(String[] args) {
+        T2 outerClass = new T2();
+        outerClass.method();
+        T2 outerClass2 = outerClass.new T2();
+        outerClass2.method();
+    }
+}
+
+
+c)
+
+import java.util.stream.*;
+import java.util.*;
+
+public class T3 {
+
+    public static void main(String[] args) {
+        try (T3Exception ex = new T3Exception()) {
+            System.out.println("try block");
+            ex.test();
+        } catch (Throwable t) {
+            System.out.println("catch block 1");
+        } catch (Exception e) {
+            System.out.println("catch block 2");
+        } finally {
+            System.out.println("finally block");
+        }
+    }
+}
+
+class T3Exception implements AutoCloseable {
+
+    @Override
+    public void close() throws Exception {
+        System.out.println("close()");
+        throw new Exception();
+    }
+
+    public void test() {
+        System.out.println("test()");
+    }
+}
+
+
+d)
+public class T11 {
+
+    void m1() {
+        System.out.println("metoda m1");
+    }
+
+    public static void main(String[] args) {
+
+        
+         new T11() {
+
+            
+            void m1() {
+                for(int i=1;i<7;i++){
+                    if(i==3) break;
+                    System.out.println(i);
+                }
+            }
+        }.m1();
+
+        
+    }
+}
+
+
+e)
+public class Main {
+
+
+    public static void main(String[] args) {
+
+        
+       Integer i1=1,i2=2,i3=3,i4=4,i5=5;
+       
+       Integer rez=i1 & i2 | i3 | i4 ^ i5;
+       System.out.println(rez);
+
+        
+    }
+}
+
+
+f)
+public class Main {
+
+
+    public static void main(String[] args) {
+
+       int i=3;
+       for(; i<=12;i+=3){
+           i=i++;
+           i-=1;
+           i++;
+           i+=1;
+           i=i++;
+       }
+       
+       System.out.println(--i);
+
+        
+    }
+}
+
+
+g)
+public class Main {
+    public static void main(String[] args) {
+
+        int i = 5;
+        int n;
+        n = i++ % 4;  
+        System.out.print(n);
+        n = i-- % 5;   
+        System.out.print(n);
+        n = ++i % 5;   
+        System.out.print(n);
+    }
+}
+
+
+h)
+public class Test {
+
+    Double d;
+    int i=5;
+
+    void saberi() {
+        Double rez=(double)d+i;
+        System.out.println(rez);
+    }
+
+    public static void main(String[] args) {
+
+        Double d = 5.0;   
+        Test t = new Test();
+        t.saberi();
+    }
+}
+
+
+i)
+interface I1 {
+    void m();
+    String toString();
+    int hashCode();
+}
+
+interface I2 extends I1 {
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        I2 obj = new I2() {
+
+            @Override
+            public void m() {
+                System.out.println("Metoda m ");
+            }
+        };
+
+     obj.m();
+    }
+}
